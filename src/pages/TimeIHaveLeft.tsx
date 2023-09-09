@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import createHyperlink from '../components/utils';
 
 const TimeIHaveLeft = () => {
 	const [percentage, setPercentage] = useState(0);
@@ -67,7 +68,7 @@ const TimeIHaveLeft = () => {
 			/>
 			<br></br>
 			<>
-				<p>If you can live up to 80 years old, assumingly don't get any genetec adjustments or have your body frozen, and survive through maybe a few more financial crises, socialeconomic revolutions, artificial intelligent impact, cancers, epidemics, then...</p>
+				<p>If you can live up to 80 years old, assumingly don't get any genetec adjustments or have your body frozen, and survive through maybe a few more financial crises, social revolutions, artificial intelligent impact, cancers, epidemics, then...</p>
 				<p>
 					the amount of time you have left is: <b>~{timeLeft.years} years</b> OR{' '}
 					<b>~{timeLeft.months} months</b> OR <b>~{timeLeft.days} days</b>
@@ -84,11 +85,23 @@ const TimeIHaveLeft = () => {
 				</div>
 			</div>
 
+
 			{/*Drawings pointing at some important milestone: 18, 60, */}
+			<h1>Life Highlights 🙃</h1>
+			<ul>
+				<li>At 18, most of you will start to move out, do what you want to do, learn and experience the big wide world outside your city/country</li>
+				<li>At 60, your body will not listen to your mind as it used to and be significantly weaker</li>
+			</ul>
+
 
 			{/*Some sources about what to do with life, optimise life
 			- HieuTV cuoc doi 1 nguoi
 			- */}
+			<h1>Resources you may need:</h1>
+			<ul>
+				<li>{createHyperlink('https://youtu.be/gGLxPY3qDYY', 'Một cuộc đời đáng sống (vietnamese)')}</li>
+				<li>Suggestion?</li>
+			</ul>
 
 
 		</div>

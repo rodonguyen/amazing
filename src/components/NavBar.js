@@ -1,6 +1,8 @@
+import createHyperlink from "./utils";
 import { Link } from "react-router-dom";
 // import ClickAwayListener from '@mui/base/ClickAwayListener';
 import { useRef } from "react";
+
 
 
 const NavBar = ({ themeMode, setThemeMode }) => {
@@ -33,8 +35,18 @@ const NavBar = ({ themeMode, setThemeMode }) => {
         <div className="standard-width">
           <nav>
             <Link to="/" className="navbar-item brand text-align-left">
-              Rodo
+              Home
             </Link>
+            <li className="navbar-item-about-author">
+              <a
+                  href="https://rodonguyen.dev/"
+                  className="navbar-item"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  About author
+              </a>
+            </li>
             <ul className="navbar-items" ref={navbarItemsRef}>
               <li>
                 <Link to="/timeihaveleft" className="navbar-item">
@@ -45,14 +57,14 @@ const NavBar = ({ themeMode, setThemeMode }) => {
             {/* <ClickAwayListener onClickAway={() => {
               navbarItemsRef.current.classList.remove("display-vertical-nav-items");
             }}> */}
-              <button
-                class="hamburger-menu navbar-item"
-                onClick={() => {
-                  navbarItemsRef.current.classList.toggle("display-vertical-nav-items");
-                }}
-              >
-                {hamburgerMenuSvg}
-              </button>
+            <button
+              class="hamburger-menu navbar-item"
+              onClick={() => {
+                navbarItemsRef.current.classList.toggle("display-vertical-nav-items");
+              }}
+            >
+              {hamburgerMenuSvg}
+            </button>
             {/* </ClickAwayListener> */}
           </nav>
         </div>

@@ -1,0 +1,682 @@
+/* *************************************************** */
+/* *************************************************** */
+/*                   APP                               */
+/* *************************************************** */
+/* *************************************************** */
+
+.App {
+  text-align: center;
+  background: var(--light-1);
+  color: var(--text-color-for-light-them-1);
+  height: 100%;
+  min-height: 100vh;
+  font-size: var(--font-size-normal);
+}
+
+h1 {
+  font-size: var(--font-size-xlarge);
+  margin: 0.8rem auto;
+  text-align: left;
+}
+
+h2 {
+  font-size: var(--font-size-large);
+  margin: 0.5rem auto;
+  text-align: left;
+}
+
+h5 {
+  font-size: var(--font-size-normal);
+  margin: 0.5rem auto;
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+  margin: 0.8rem auto;
+}
+
+br.small {
+  font-size: 10px;
+  margin: 0;
+}
+
+.xlarge {
+  font-size: var(--font-size-xlarge);
+}
+
+a {
+  color: #0d1cc3;
+}
+
+a:visited {
+  color: var(--purple-1);
+}
+
+.left.intro {
+  width: 40%;
+}
+
+.right.intro {
+  width: 52%;
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.background-color-2 {
+  background: var(--light-2);
+}
+
+.text-align-left {
+  text-align: left;
+}
+
+.fade {
+  color: var(--black-blue-2);
+}
+
+.container {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  max-width: 982px;
+  text-align: left;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+/* *************************************************** */
+/*                        DARK                         */
+/* *************************************************** */
+.dark .App,
+.dark .navbar-container {
+  background: var(--dark-1);
+  color: var(--text-color-for-dark-them-1);
+}
+
+.dark .background-color-2 {
+  background: var(--dark-2);
+}
+
+.dark a {
+  color: var(--light-pink-1);
+}
+
+.dark a:visited {
+  color: var(--light-pink-2);
+}
+
+.dark button {
+  background: #232b36;
+  border-radius: 4px;
+  border-width: 2px solid #aaaaaa;
+  color: var(--text-color-for-dark-them-1);
+}
+
+.dark button:hover {
+  background: #323d4b;
+}
+
+.dark button:disabled {
+  border: 1px solid #999999;
+  background-color: #2d2d2d;
+  color: #8d8d8d;
+}
+
+.dark .fade {
+  color: var(--black-blue)
+}
+
+.App,
+a,
+a:visited,
+.background-color-2,
+.dark a,
+.dark a:visited,
+.dark .background-color-2,
+.dark .App,
+.dark .navbar-container,
+.navbar-container {
+  transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
+
+
+
+/* ################################################### */
+/* ################################################### */
+/* ##                   NAV BAR                     ## */
+/* ################################################### */
+/* ################################################### */
+
+.navbar-container nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: auto;
+  padding: 0.4rem 0rem;
+}
+
+.navbar-container {
+  /* Sticky properties */
+  /* position:static;   */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  /* Overlay content / Make element lies above others */
+  background: var(--light-1);
+}
+
+
+.navbar-container ul,
+.navbar-container li {
+  width: fit-content;
+  display: flex;
+  margin-left: auto;
+}
+
+.navbar-container ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+  padding-left: 0;
+}
+
+a.navbar-item {
+  text-decoration: none;
+  padding: 0.3rem 0.8rem;
+  display: block;
+  border-radius: 0.5rem;
+  transition: none; /* overwrite dark/light mode transition */
+}
+
+a.navbar-item:hover {
+  background: var(--light-2);
+}
+
+a.navbar-item.brand {
+  font-size: var(--font-size-large);
+}
+
+a.navbar-item,
+a.navbar-item:visited {
+  color: var(--text-color-for-light-them-2);
+}
+
+.dark a.navbar-item,
+.dark a.navbar-item:visited {
+  color: var(--text-color-for-dark-them-2);
+}
+
+div.navbar-container {
+  margin-left: auto;
+}
+
+.navbar-container {
+  border-top: 4px solid #424242;
+  border-bottom: 1px solid #c6c6c6;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.standard-width {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 982px;
+}
+
+button.theme-mode {
+  position: absolute;
+  right: 0;
+}
+
+button.hamburger-menu {
+  display: none;
+}
+
+
+@media (max-width: 700px) {
+
+  ul.navbar-items {
+    display: none;
+  }
+
+  button.hamburger-menu {
+    margin-left: auto;
+    display: block;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: transparent;
+  }
+
+
+  /* when click the hamburger-menu button */
+  ul.navbar-items {
+    /* The hide/show part */
+    opacity: 0;
+    /* Hide menu first */
+    display: none; 
+
+    /* Position */
+    position: absolute;
+    top: 50.6px;
+    right: -15px;
+
+    /* Styling */
+    backdrop-filter: blur(15px);
+    background-color: rgb(0, 0, 0, 0.05);
+    padding: 8px;
+    border-radius: 0rem 0rem 0rem 0.5rem;
+    transition: all .5s ease-out;
+  }
+
+  ul.navbar-items.display-vertical-nav-items {
+    transition: all .5s ease-out;
+    opacity: 1;
+    /* Display menu */
+    display: inline-block;   
+  }
+  
+  .dark ul.navbar-items.display-vertical-nav-items {
+    background-color: rgba(29, 32, 47, 0.35);
+  }
+}
+
+.dark .navbar-item:hover {
+  background: var(--dark-3);
+}
+
+
+/* ################################################### */
+/* ################################################### */
+/* ##                   HOME BIO                    ## */
+/* ################################################### */
+/* ################################################### */
+
+.row.introduction {
+  grid-column-gap: 20px;
+}
+
+.portrait {
+  border-radius: 10px;
+  grid-column: span 5;
+  margin-top: 1rem;
+}
+
+.portrait .img-container {
+  width: 291px;
+  height: 387px;
+  float: right;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.portrait .img-container img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.portrait .img-container:hover img {
+  transform: scale(1.06);
+}
+
+.bio {
+  grid-column: span 6;
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  .bio {
+    grid-column: span 12;
+    text-align: center;
+  }
+  
+  .portrait {
+    grid-column: span 12;
+  }
+
+  .portrait .img-container {
+    /* Use <div className=img-container> to contain zoomed <img> inside */
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    float: left;
+  }
+
+  .img-container img {
+    object-fit: cover;
+    object-position: 0 -30%;
+    transform: scale(1.25);
+  }
+
+  .portrait .img-container:hover img {
+    transform: scale(1.35);
+  }
+}
+
+/* ################################################### */
+/* ################################################### */
+/* ##                   HISTORY                     ## */
+/* ################################################### */
+/* ################################################### */
+.history .time {
+  grid-column: span 1;
+  text-align: center;
+}
+
+.history .entry-dot {
+  position: absolute;
+  top: 0px;
+  left: -5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 7px;
+  background: #a8a8a8;
+  border: 2px solid #f5f5f5;
+}
+
+.history .company-logo {
+  grid-column: span 1;
+  vertical-align: top;
+  border-left: 2px solid #cfcfcf;
+  position: relative;
+}
+
+.history .company-logo img {
+  border-radius: 5px;
+  width: 100%;
+  max-width: 80px;
+  margin-left: 10px;
+}
+
+.history .description {
+  grid-column: span 10;
+  font-size: 17px;
+  vertical-align: top;
+  padding-left: 20px;
+  padding-bottom: 1rem;
+}
+
+.history p {
+  margin: auto auto 0.5rem auto;
+  text-align: justify;
+}
+
+.description h5 {
+  margin-top: 0;
+}
+
+@media (max-width: 800px) {
+  .history .time {
+    font-size: var(--font-size-small);
+    padding-top: 5px;
+    padding-right: 5px;
+  }
+}
+
+/* ################################################### */
+/* ################################################### */
+/* ##                MY PET PROJECTS                ## */
+/* ################################################### */
+/* ################################################### */
+
+.project {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(187, 187, 187);
+  min-height: 8.5rem;  /* +0.5rem from ".project img" */
+}
+
+.project p {
+  text-align: left;
+}
+
+.ppicture {
+  float: left;
+  margin-right: 1rem;
+}
+
+.project img {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 5px;
+  border: 1px solid rgb(202, 202, 202);
+}
+
+.project svg {
+  width: 20px;
+  height: 20px;
+}
+
+.project svg:hover path {
+  fill: var(--purple-1);
+}
+
+.project .description p {
+  margin: 0.1rem auto;
+  text-align: justify;
+}
+
+.project ul {
+  margin: 0.2rem 0;
+}
+
+.project li {
+  padding-left: 0.5rem;
+  margin-left: 8rem;
+}
+
+
+@media (max-width: 500px) {
+  .project .ppicture img {
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
+.dark .project svg path {
+  fill: white;
+}
+
+.dark .project svg:hover path {
+  fill: var(--purple-1);
+}
+
+
+/* ################################################### */
+/* ################################################### */
+/* ##                   ACHIEVEMENTS                ## */
+/* ################################################### */
+/* ################################################### */
+.achievements li.no-list-style {
+  list-style: none;
+}
+
+
+/* ################################################### */
+/* ################################################### */
+/* ##                   SKILLS                      ## */
+/* ################################################### */
+/* ################################################### */
+
+.skills ul {
+  list-style: none;
+}
+
+.skills h2 {
+  font-weight: normal;
+}
+
+svg.leetcode-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.dark svg path.leetcode-icon-path-1 {
+  fill: #b1d5f1
+}
+
+
+/* ################################################### */
+/* ################################################### */
+/* ##                   CARD                        ## */
+/* ################################################### */
+/* ################################################### */
+
+.card {
+  --bs-card-border-radius: 0.5rem;
+  --bs-card-inner-border-radius: calc(0.5rem - 1px);
+}
+
+.card-body {
+  background: var(--light-2);
+  border-color: var(--light-2);
+  border-radius: 0 0 .5rem .5rem;
+}
+
+.bg-dark {
+  --bs-bg-opacity: 0.1;
+}
+
+
+/* ################################################### */
+/* ################################################### */
+/* ##                     BUTTON                    ## */
+/* ################################################### */
+/* ################################################### */
+
+.btn-primary {
+  margin: 0 0.2rem;
+  --bs-btn-focus-shadow-rgb: none;
+  font-size: var(--font-size-normal);
+}
+
+
+
+/* ################################################### */
+/* ################################################### */
+/* ##                   CONTACT                     ## */
+/* ################################################### */
+/* ################################################### */
+
+.contact-list .center {
+  margin-left: 25%;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 500px) {
+  .contact-list .center {
+    margin-left: 10%;
+  }
+}
+
+
+/* ################################################### */
+/* ################################################### */
+/* ##                     RESUME                    ## */
+/* ################################################### */
+/* ################################################### */
+
+.container.resume {
+  height: 86vh;
+}
+
+.container.resume button {
+  margin: 0.3rem;
+}
+
+
+/* ################################################### */
+/* ################################################### */
+/* ##                COOLER DATE                    ## */
+/* ################################################### */
+/* ################################################### */
+
+.container.dateme {
+  padding-top: 3rem;
+  max-width: 700px;
+}
+
+input#coolerdate {
+  width: 400px;
+}
+
+
+
+/* ################################################### */
+/* ################################################### */
+/* ##                  NOT FOUND                    ## */
+/* ################################################### */
+/* ################################################### */
+
+.notfound h1, .notfound p {
+  text-align: center;
+  margin: 3rem auto;
+}
+
+
+/* ################################################### */
+/* ################################################### */
+/* ##                GLOBAL VARIABLES               ## */
+/* ################################################### */
+/* ################################################### */
+
+/* Check out here: https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557  */
+
+:root {
+  --text-color-for-light-them-1: #000000;
+  --text-color-for-light-them-2: #1e2030;
+  --light-1: #e6ecf4;
+  --light-2: #e2e2e6;
+
+  --text-color-for-dark-them-1: #e6e6e6;
+  --text-color-for-dark-them-2: #a7abca;
+  --dark-1: #0B1119;
+  --dark-2: #070b10;
+  --dark-3: #070707;
+
+  --red-vanilla: #E63946;
+  --white-vanilla: #fefefe;
+  --light-blue: #A8DADC;
+  --pale-blue: #457B9D;
+  --purple-1: #a344a3;
+  --light-pink-1: #d984d9;
+  --light-pink-2: #FFAFFF;
+
+  --dark-background: #003060;
+  --dark-xbackground-2: #055C9D;
+  --dark-xbackground-3: #003B73;
+  --dark-xbackground-4: rgb(28, 77, 126);
+  --black-blue: #598fbf;
+  --black-blue-2: #0f5f9c;
+  --bs-card-color: #111111;
+
+  --nav-link-padding: 0.5rem;
+  --nav-link-padding-side: 1rem;
+
+  --font-size-small: 13px;
+  --font-size-normal: 16px;
+  --font-size-large: 24px;
+  --font-size-xlarge: 30px;
+
+  --bs-body-color: var(--white);
+}

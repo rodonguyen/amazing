@@ -124,7 +124,7 @@ const TimeIHaveLeft = () => {
 				<li>
 					{createHyperlink(
 						'https://youtu.be/gGLxPY3qDYY',
-						'Một cuộc đời đáng sống (vietnamese)'
+						'Một cuộc đời đáng sống - HieuTV (vietnamese)'
 					)}
 				</li>
 				<li>

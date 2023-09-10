@@ -388,16 +388,25 @@ button.hamburger-menu {
 /* ################################################### */
 /* ################################################### */
 
-.progress-container {
+.lifebar-illustration-container {
   width: 80%;
-  margin: 50px auto;
+  margin: 30px auto;
+}
+
+img.lifebar-annotation {
+  margin: 30px auto 0 auto;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.lifebar-container {
   background-color: var(--secondary);
   border-radius: 5px;
   height: 50px;
   position: relative;
 }
 
-.progress-bar {
+.lifebar {
   background-color: #4caf50;
   height: 100%;
   border-radius: 5px;
@@ -406,7 +415,7 @@ button.hamburger-menu {
 }
 
 /* Add this to your existing CSS */
-.progress-text {
+.lifebar-text {
   position: absolute;
   top: 0;
   left: 50%;
@@ -427,62 +436,6 @@ button.hamburger-menu {
   --bs-btn-focus-shadow-rgb: none;
   font-size: var(--font-size-normal);
 }
-
-
-
-/* ################################################### */
-/* ################################################### */
-/* ##                   CONTACT                     ## */
-/* ################################################### */
-/* ################################################### */
-
-.contact-list .center {
-  margin-left: 25%;
-}
-
-.icon {
-  width: 16px;
-  height: 16px;
-}
-
-@media (max-width: 500px) {
-  .contact-list .center {
-    margin-left: 10%;
-  }
-}
-
-
-/* ################################################### */
-/* ################################################### */
-/* ##                     RESUME                    ## */
-/* ################################################### */
-/* ################################################### */
-
-.container.resume {
-  height: 86vh;
-}
-
-.container.resume button {
-  margin: 0.3rem;
-}
-
-
-/* ################################################### */
-/* ################################################### */
-/* ##                COOLER DATE                    ## */
-/* ################################################### */
-/* ################################################### */
-
-.container.dateme {
-  padding-top: 3rem;
-  max-width: 700px;
-}
-
-input#coolerdate {
-  width: 400px;
-}
-
-
 
 /* ################################################### */
 /* ################################################### */

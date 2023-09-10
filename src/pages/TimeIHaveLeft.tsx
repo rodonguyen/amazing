@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import createHyperlink from '../components/utils';
+import lifebarAnnotation from '../media/TimeIHaveLeft_Lifebar_annotation.jpg';
 
 const TimeIHaveLeft = () => {
 	const [percentage, setPercentage] = useState(0);
@@ -12,9 +13,8 @@ const TimeIHaveLeft = () => {
 	const currentDate = new Date();
 
 	const calculatePercentage = (monthsLeft) => {
-		return ((1 - monthsLeft / (80 * 12)) * 100).toFixed(1)
-	}
-
+		return ((1 - monthsLeft / (80 * 12)) * 100).toFixed(1);
+	};
 
 	const handleDobChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const newDob = new Date(event.target.value);
@@ -41,9 +41,9 @@ const TimeIHaveLeft = () => {
 		const monthsLeft = calculateTotalMonths(deathDate, currentDate);
 		const daysLeft = Math.floor(differenceMs / (1000 * 60 * 60 * 24));
 
-		const tempPercentage = calculatePercentage(monthsLeft)
-		setPercentage(tempPercentage + '%')
-		const progressBar = document.getElementById("life-progress");
+		const tempPercentage = calculatePercentage(monthsLeft);
+		setPercentage(tempPercentage + '%');
+		const progressBar = document.getElementById('life-progress');
 		progressBar.style.width = `${tempPercentage}%`;
 		setTimeLeft({ years: yearsLeft, months: monthsLeft, days: daysLeft });
 	};
@@ -68,42 +68,58 @@ const TimeIHaveLeft = () => {
 			/>
 			<br></br>
 			<>
-				<p>If you can live up to 80 years old, assumingly don't get any genetec adjustments or have your body frozen, and survive through maybe a few more financial crises, social revolutions, artificial intelligent impact, cancers, epidemics, then...</p>
+				<p>
+					If you can live up to 80 years old, assumingly don't get any genetec adjustments
+					or have your body frozen, and survive through maybe a few more financial crises,
+					social revolutions, artificial intelligent impact, cancers, epidemics, then...
+				</p>
 				<p>
 					the amount of time you have left is: <b>~{timeLeft.years} years</b> OR{' '}
 					<b>~{timeLeft.months} months</b> OR <b>~{timeLeft.days} days</b>
 				</p>
+				<p>
+					Through this new len of looking at life expectancy, I hope you now think about
+					your life a bit differently.{' '}
+				</p>
 			</>
-
-			{// Add case of more than 80yo 
+			{
+				// Add case of more than 80yo
 			}
-
 			{/* Progress bar */}
-			<div className="progress-container">
-				<div className="progress-bar" id="life-progress">
-					<div className="progress-text">{percentage}</div>
+			<div className='lifebar-illustration-container'>
+				<div className='annotation-container'>
+					<img
+						className='lifebar-annotation'
+						src={lifebarAnnotation}
+						alt='Life bar annotations'
+					/>
+				</div>
+				<div className='lifebar-container'>
+					<div className='lifebar' id='life-progress'>
+						<div className='lifebar-text'>{percentage}</div>
+					</div>
 				</div>
 			</div>
-
-
 			{/*Drawings pointing at some important milestone: 18, 60, */}
-			<h1>Life Highlights 🙃</h1>
-			<ul>
-				<li>At 18, most of you will start to move out, do what you want to do, learn and experience the big wide world outside your city/country</li>
-				<li>At 60, your body will not listen to your mind as it used to and be significantly weaker</li>
-			</ul>
-
-
 			{/*Some sources about what to do with life, optimise life
 			- HieuTV cuoc doi 1 nguoi
 			- */}
 			<h1>Resources you may need:</h1>
 			<ul>
-				<li>{createHyperlink('https://youtu.be/gGLxPY3qDYY', 'Một cuộc đời đáng sống (vietnamese)')}</li>
-				<li>Suggestion?</li>
+				<li>
+					{createHyperlink(
+						'https://youtu.be/gGLxPY3qDYY',
+						'Một cuộc đời đáng sống (vietnamese)'
+					)}
+				</li>
+				<li>
+					{createHyperlink(
+						'https://www.youtube.com/shorts/Wa7-n9j_ARM?feature=share',
+						'Life advice for your 20s, 30s, 40s, 60s - Koskas'
+					)}
+				</li>
+				<li>Suggestion? Send it to rodonguyendd@gmail.com</li>
 			</ul>
-
-
 		</div>
 	);
 };

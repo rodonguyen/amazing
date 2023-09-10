@@ -5,6 +5,7 @@ import lifebarAnnotation from '../media/TimeIHaveLeft_Lifebar_annotation.jpg';
 const TimeIHaveLeft = () => {
 	changeWindowTitle(window.location.pathname)
 
+	const [over100yoMessage, setOver100yoMessage] = useState("");
 	const [percentage, setPercentage] = useState(0);
 	const [dob, setDob] = useState(new Date('2001-01-01'));
 	const [timeLeft, setTimeLeft] = useState({
@@ -14,8 +15,22 @@ const TimeIHaveLeft = () => {
 	});
 	const currentDate = new Date();
 
+	/** Add a fun message if current age is over 100 years old. */
+	const changeOver100Message = (monthsLeft) => {
+		let percentage = ((1 - monthsLeft / (80 * 12)) * 100)
+
+		if (percentage > 125) {
+			setOver100yoMessage("(Looks like you're not human, dude!)")
+		}
+		else {
+			setOver100yoMessage("")
+		}
+	}
+
 	const calculatePercentage = (monthsLeft) => {
-		return ((1 - monthsLeft / (80 * 12)) * 100).toFixed(1);
+		let percentage = ((1 - monthsLeft / (80 * 12)) * 100)
+		percentage = Math.max(0, percentage)
+		return percentage.toFixed(1);
 	};
 
 	const handleDobChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -45,6 +60,7 @@ const TimeIHaveLeft = () => {
 
 		const tempPercentage = calculatePercentage(monthsLeft);
 		setPercentage(tempPercentage + '%');
+		changeOver100Message(monthsLeft)
 		const progressBar = document.getElementById('life-progress');
 		progressBar.style.width = `${tempPercentage}%`;
 		setTimeLeft({ years: yearsLeft, months: monthsLeft, days: daysLeft });
@@ -62,8 +78,8 @@ const TimeIHaveLeft = () => {
 			<input
 				type='date'
 				name='dob'
-				min='1950-01-01'
-				max='2030-01-01'
+				min='1900-01-01'
+				max='2100-01-01'
 				defaultValue='2001-01-01'
 				onChange={handleDobChange}
 				required
@@ -77,16 +93,15 @@ const TimeIHaveLeft = () => {
 				</p>
 				<p>
 					the amount of time you have left is: <b>~{timeLeft.years} years</b> OR{' '}
-					<b>~{timeLeft.months} months</b> OR <b>~{timeLeft.days} days</b>
+					<b>~{timeLeft.months} months</b> OR <b>~{timeLeft.days} days</b> {over100yoMessage}
 				</p>
 				<p>
 					Through this new len of looking at life expectancy, I hope you now think about
 					your life a bit differently.{' '}
 				</p>
 			</>
-			{
-				// Add case of more than 80yo
-			}
+			
+
 			{/* Progress bar */}
 			<div className='lifebar-illustration-container'>
 				<div className='annotation-container'>
@@ -102,10 +117,8 @@ const TimeIHaveLeft = () => {
 					</div>
 				</div>
 			</div>
-			{/*Drawings pointing at some important milestone: 18, 60, */}
-			{/*Some sources about what to do with life, optimise life
-			- HieuTV cuoc doi 1 nguoi
-			- */}
+			
+
 			<h1>Resources you may need:</h1>
 			<ul>
 				<li>

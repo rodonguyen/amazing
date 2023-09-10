@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import createHyperlink from '../components/utils';
+import {createHyperlink, changeWindowTitle} from '../components/utils';
 import lifebarAnnotation from '../media/TimeIHaveLeft_Lifebar_annotation.jpg';
 
 const TimeIHaveLeft = () => {
+	changeWindowTitle(window.location.pathname)
+
 	const [percentage, setPercentage] = useState(0);
 	const [dob, setDob] = useState(new Date('2001-01-01'));
 	const [timeLeft, setTimeLeft] = useState({

@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import {createHyperlink, changeWindowTitle} from '../components/utils';
-import lifebarAnnotation from '../media/TimeIHaveLeft_Lifebar_annotation.jpg';
+
+interface TimeLeft {
+	years: number;
+	months: number;
+	days: number;
+}
 
 const TimeIHaveLeft = () => {
 	changeWindowTitle(window.location.pathname)
 
 	const [over100yoMessage, setOver100yoMessage] = useState("");
-	const [percentage, setPercentage] = useState(0);
+	const [percentage, setPercentage] = useState('');
 	const [dob, setDob] = useState(new Date('2001-01-01'));
-	const [timeLeft, setTimeLeft] = useState({
+	const [timeLeft, setTimeLeft] = useState<TimeLeft>({
 		years: 0,
 		months: 0,
 		days: 0,
@@ -16,8 +21,8 @@ const TimeIHaveLeft = () => {
 	const currentDate = new Date();
 
 	/** Add a fun message if current age is over 100 years old. */
-	const changeOver100Message = (monthsLeft) => {
-		let percentage = ((1 - monthsLeft / (80 * 12)) * 100)
+	const changeOver100Message = (monthsLeft: number) => {
+		const percentage = ((1 - monthsLeft / (80 * 12)) * 100)
 
 		if (percentage > 125) {
 			setOver100yoMessage("(Looks like you're not human, dude!)")
@@ -27,14 +32,14 @@ const TimeIHaveLeft = () => {
 		}
 	}
 
-	const calculatePercentage = (monthsLeft) => {
-		let percentage = ((1 - monthsLeft / (80 * 12)) * 100)
+	const calculatePercentage = (monthsLeft: number): string => {
+		let percentage: number = ((1 - monthsLeft / (80 * 12)) * 100)
 		percentage = Math.max(0, percentage)
 		return percentage.toFixed(1);
 	};
 
 	const handleDobChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		const newDob = new Date(event.target.value);
+		const newDob: Date = new Date(event.target.value);
 		setDob(newDob);
 	};
 
@@ -61,7 +66,7 @@ const TimeIHaveLeft = () => {
 		const tempPercentage = calculatePercentage(monthsLeft);
 		setPercentage(tempPercentage + '%');
 		changeOver100Message(monthsLeft)
-		const progressBar = document.getElementById('life-progress');
+		const progressBar = document.getElementById('life-progress')!;
 		progressBar.style.width = `${tempPercentage}%`;
 		setTimeLeft({ years: yearsLeft, months: monthsLeft, days: daysLeft });
 	};
@@ -107,7 +112,7 @@ const TimeIHaveLeft = () => {
 				<div className='annotation-container'>
 					<img
 						className='lifebar-annotation'
-						src={lifebarAnnotation}
+						src='../media/TimeIHaveLeft_Lifebar_annotation.jpg'
 						alt='Life bar annotations'
 					/>
 				</div>

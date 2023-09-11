@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {createHyperlink, changeWindowTitle} from '../components/utils';
+import lifebarAnnotationImage from "../media/TimeIHaveLeft_Lifebar_annotation.jpg";
 
 interface TimeLeft {
 	years: number;
@@ -44,7 +45,6 @@ const TimeIHaveLeft = () => {
 	};
 
 	const calculateTotalMonths = (deathDate: Date, currentDate: Date): number => {
-		console.log(deathDate, dob);
 		const differenceInMonths =
 			(deathDate.getFullYear() - currentDate.getFullYear()) * 12 +
 			(deathDate.getMonth() - currentDate.getMonth());
@@ -112,7 +112,7 @@ const TimeIHaveLeft = () => {
 				<div className='annotation-container'>
 					<img
 						className='lifebar-annotation'
-						src='../media/TimeIHaveLeft_Lifebar_annotation.jpg'
+						src={lifebarAnnotationImage}
 						alt='Life bar annotations'
 					/>
 				</div>

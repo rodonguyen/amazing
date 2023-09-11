@@ -13,7 +13,7 @@ const TimeIHaveLeft = () => {
 	const [over100yoMessage, setOver100yoMessage] = useState("");
 	const [percentage, setPercentage] = useState('');
 	const [dob, setDob] = useState(new Date('2001-01-01'));
-	const [timeLeft, setTimeLeft] = useState<TimeLeft({
+	const [timeLeft, setTimeLeft] = useState<TimeLeft>({
 		years: 0,
 		months: 0,
 		days: 0,

@@ -1,4 +1,4 @@
-import {changeWindowTitle} from '../components/utils';
+import {changeWindowTitle} from '../components/utils.js';
 
 const Home = () => {
 	changeWindowTitle(window.location.pathname)

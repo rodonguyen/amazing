@@ -1,7 +1,7 @@
-import Home from "./Home";
-import NavBar from "../components/NavBar";
+import Home from "./Home.js";
+import NavBar from "../components/NavBar.js";
 import TimeIHaveLeft from "./TimeIHaveLeft.tsx";
-import NotFound from "./NotFound";
+import NotFound from "./NotFound.js";
 import "../stylesheets/App.css";
 
 import { Outlet, BrowserRouter, Routes, Route } from "react-router-dom";

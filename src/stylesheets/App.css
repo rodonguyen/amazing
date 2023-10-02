@@ -82,11 +82,12 @@ a:visited {
 button {
   border-width: 1px;
   border-radius: 4px;
-  border-color: var(--secondary);
   padding: 4px 12px;
   box-shadow: none;
-  background-color: transparent;
   cursor: pointer;
+  background-color: transparent;
+  border-color: var(--secondary);
+  color: #000000;
 }
 
 .container {

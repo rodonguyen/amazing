@@ -48,7 +48,7 @@ const NavBar = ({ themeMode, setThemeMode }) => {
             <ul className="navbar-items" ref={navbarItemsRef}>
               <li>
                 <Link to="/timeihaveleft" className="navbar-item">
-                  TimeIHaveLeft
+                  Time I Have Left
                 </Link>
               </li>
             </ul>

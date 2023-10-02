@@ -56,11 +56,7 @@ const projectContents = {
 			<p>
 				A cryptocurrency <b>trading bot</b> that can auto-trade efficiently while
 				guaranteeing minimal risk. Backtest results showed +110% profit annually on average
-				utilising SuperTrend indicator.{' '}
-				{createHyperlink(
-					'https://www.linkedin.com/posts/rodonguyen_programming-datascience-dataanalytics-activity-6986635066823127040-TFcs?utm_source=share&utm_medium=member_desktop',
-					'Read more in this blog'
-				)}
+				utilising SuperTrend indicator.
 			</p>
 		),
 		long: (
@@ -292,16 +288,14 @@ export default function Projects() {
 
 	return (
 		<>
-			<h3>Amazing Apps</h3>
-
       {createProjectEntry(
 				'Time I Have Left',
 				project04Index,
 				'https://github.com/rodonguyen/amazing/blob/main/src/pages/TimeIHaveLeft.tsx',
 				timeihaveleftImage,
-        <button><Link to="/timeihaveleft" className="project-button">
+        <><button className='project-button'><Link to="/timeihaveleft" className="project-button">
                   Check it out!
-                </Link></button>
+                </Link></button>  &ensp; {'New!'}</>
 			)}
 
 			{createProjectEntry(
@@ -309,10 +303,10 @@ export default function Projects() {
 				project02Index,
 				'https://github.com/rodonguyen/BitTracker',
 				bittrackerImage,
-				createHyperlink(
+				<>{createHyperlink(
 					'https://www.linkedin.com/posts/rodonguyen_programming-datascience-dataanalytics-activity-6986635066823127040-TFcs?utm_source=share&utm_medium=member_desktop',
-					<button>Read in Blog</button>
-				)
+					<button className='project-button'>Read in Blog</button>
+				)} &ensp; {'New!'}</>
 			)}
 
 			{createProjectEntry(
@@ -327,7 +321,7 @@ export default function Projects() {
 				project05Index,
 				'https://github.com/rodonguyen/my_website',
 				websiteImage,
-				createHyperlink('https://rodonguyen.dev/', <button>View it now</button>)
+				createHyperlink('https://rodonguyen.dev/', <button className='project-button'>View it now</button>)
 			)}
 
 			{createProjectEntry(
@@ -344,7 +338,7 @@ export default function Projects() {
 				twitterImage,
 				createHyperlink(
 					'https://rodonguyen-spam-tweet-detector-app-app-ixl0vb.streamlit.app/',
-					<button>Demo App</button>
+					<button className='project-button'>Demo App</button>
 				)
 			)}
 		</>

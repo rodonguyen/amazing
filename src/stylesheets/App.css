@@ -457,6 +457,9 @@ button.hamburger-menu {
 .project .description a.project-button:visited {
   color: var(--text-color-for-light-theme);
 }
+.project .description button.project-button {
+  background: var(--secondary);
+}
 
 @media (max-width: 500px) {
   .project .ppicture img {

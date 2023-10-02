@@ -7,7 +7,7 @@
 .App {
   text-align: center;
   background: var(--background-light);
-  color: var(--text-light);
+  color: var(--text-color-for-light-theme);
   height: 100%;
   min-height: 100vh;
   font-size: var(--font-size-normal);
@@ -50,7 +50,7 @@ a {
 }
 
 a:visited {
-  color: var(--purple-1);
+  color: var(--primary);
 }
 
 .left.intro {
@@ -79,6 +79,15 @@ a:visited {
   color: var(--black-blue-2);
 }
 
+button {
+  border-width: 1px;
+  border-color: var(--secondary);
+  padding: 4px 12px;
+  border-radius: 4px;
+  box-shadow: none;
+  cursor: pointer;
+}
+
 .container {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -102,7 +111,7 @@ a:visited {
 /* *************************************************** */
 .dark .App {
   background: var(--dark-1);
-  color: var(--text-color-for-dark-them-1);
+  color: var(--text-color-for-dark-theme);
 }
 
 .dark .background-color-2 {
@@ -110,18 +119,18 @@ a:visited {
 }
 
 .dark a {
-  color: var(--light-pink-1);
+  color: var(--light-pink);
 }
 
 .dark a:visited {
-  color: var(--light-pink-2);
+  color: var(--light-pink);
 }
 
 .dark button {
   background: #232b36;
   border-radius: 4px;
   border-width: 2px solid #aaaaaa;
-  color: var(--text-color-for-dark-them-1);
+  color: var(--text-color-for-dark-theme);
 }
 
 .dark button:hover {
@@ -219,12 +228,12 @@ a.navbar-item.brand {
 
 a.navbar-item,
 a.navbar-item:visited {
-  color: var(--text-light);
+  color: var(--text-color-for-light-theme);
 }
 
 .dark a.navbar-item,
 .dark a.navbar-item:visited {
-  color: var(--text-light);
+  color: var(--text-color-for-light-theme);
 }
 
 div.navbar-container {
@@ -308,7 +317,7 @@ button.hamburger-menu {
 
 .dark .navbar-container {
   background: var(--secondary);
-  color: var(--text-color-for-dark-them-1);
+  color: var(--text-color-for-dark-theme);
   box-shadow: 0px 5px 10px rgb(245, 199, 184, 0.2); /* x-offset y-offset blur color */
 }
 
@@ -382,6 +391,93 @@ button.hamburger-menu {
   }
 }
 
+
+/* ################################################### */
+/* ################################################### */
+/* ##                   PROJECTS                    ## */
+/* ################################################### */
+/* ################################################### */
+
+.project {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(187, 187, 187);
+  min-height: 8.5rem;  /* +0.5rem from ".project img" */
+}
+
+.project p {
+  text-align: left;
+}
+
+.ppicture {
+  float: left;
+  margin-right: 1rem;
+}
+
+.project img {
+  height: 8rem;
+  width: 8rem;
+  border-radius: 5px;
+  border: 1px solid rgb(202, 202, 202);
+}
+
+.project svg {
+  width: 20px;
+  height: 20px;
+}
+
+.project svg:hover path {
+  fill: var(--red-vanilla);
+}
+
+.project .description p {
+  margin: 0.1rem auto;
+  text-align: justify;
+}
+
+.project ul {
+  margin: 0.2rem 0;
+}
+
+.project li {
+  padding-left: 0.5rem;
+  margin-left: 8rem;
+}
+
+.project .description a {
+  padding: 0;
+  text-decoration: none;
+  transition: none;
+}
+.project .description a.project-button:hover {
+  background: none;
+}
+
+.project .description a.project-button,
+.project .description a.project-button:visited {
+  color: var(--text-color-for-light-theme);
+}
+
+@media (max-width: 500px) {
+  .project .ppicture img {
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
+.dark .project svg path {
+  fill: white;
+}
+
+.dark .project svg:hover path {
+  fill: var(--red-vanilla);
+}
+
+.dark .project .description a.project-button,
+.dark .project .description a.project-button:visited {
+  color: var(--text-dark);
+}
+
 /* ################################################### */
 /* ################################################### */
 /* ##                TIME I HAVE LEFT               ## */
@@ -414,15 +510,14 @@ img.lifebar-annotation {
   transition: width 0.3s ease-in-out;
 }
 
-/* Add this to your existing CSS */
 .lifebar-text {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%) translateY(40%);
+  transform: translateX(-50%) translateY(30%);
   line-height: 30px; /* Center vertically */
-  font-size: 16px;
-  color: var(--text-light); /* Text color */
+  font-size: var(--font-size-normal);
+  color: var(--text-color-for-light-theme); /* Text color */
 }
 
 /* ################################################### */
@@ -458,46 +553,33 @@ img.lifebar-annotation {
 /* Check out here: https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557  */
 
 :root {
-  --text-light: #000000;
   --background-light: #e7f6ea;
   --primary: #582fff;
   --secondary: #f5c7b8;
   --accent: #e98463;
-
-  --text-color-for-light-them-1: #000000;
-  --text-color-for-light-them-2: #1e2030;
+  
+  --text-color-for-light-theme: #000000;
   --light-1: #e6ecf4;
   --light-2: #e2e2e6;
 
-  --text-color-for-dark-them-1: #e6e6e6;
-  --text-color-for-dark-them-2: #a7abca;
+  --text-color-for-dark-theme: #e6e6e6;
   --dark-1: #0B1119;
   --dark-2: #070b10;
   --dark-3: #070707;
 
+  /* Customised colors for other elements */
   --red-vanilla: #E63946;
   --white-vanilla: #fefefe;
   --light-blue: #A8DADC;
   --pale-blue: #457B9D;
-  --purple-1: #a344a3;
-  --light-pink-1: #d984d9;
-  --light-pink-2: #FFAFFF;
-
-  --dark-background: #003060;
-  --dark-xbackground-2: #055C9D;
-  --dark-xbackground-3: #003B73;
-  --dark-xbackground-4: rgb(28, 77, 126);
-  --black-blue: #598fbf;
-  --black-blue-2: #0f5f9c;
-  --bs-card-color: #111111;
+  --dark-blue: #0f5f9c;
+  --light-pink: #d984d9;
 
   --nav-link-padding: 0.5rem;
   --nav-link-padding-side: 1rem;
 
-  --font-size-small: 13px;
-  --font-size-normal: 16px;
+  --font-size-small: 14px;
+  --font-size-normal: 18px;
   --font-size-large: 24px;
   --font-size-xlarge: 30px;
-
-  --bs-body-color: var(--white);
 }

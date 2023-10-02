@@ -471,14 +471,12 @@ button.hamburger-menu {
 .dark .project svg path {
   fill: white;
 }
-
 .dark .project svg:hover path {
   fill: var(--red-vanilla);
 }
 
-.dark .project .description a.project-button,
-.dark .project .description a.project-button:visited {
-  color: var(--text-dark);
+.dark .project .description button.project-button{
+  color: var(--text-color-for-light-theme);
 }
 
 /* ################################################### */

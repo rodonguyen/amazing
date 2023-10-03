@@ -19,11 +19,17 @@ const TimeIHaveLeft = () => {
 		months: 0,
 		days: 0,
 	});
+	const [timeLeftMinus10Years, setTimeLeftMinus10Years] = useState<TimeLeft>({
+		years: 0,
+		months: 0,
+		days: 0,
+	});
 	const currentDate = new Date();
+	const ASSUMED_LIFE_EXPECTANCY = 80;
 
 	/** Add a fun message if current age is over 100 years old. */
 	const changeOver100Message = (monthsLeft: number) => {
-		const percentage = ((1 - monthsLeft / (80 * 12)) * 100)
+		const percentage = ((1 - monthsLeft / (ASSUMED_LIFE_EXPECTANCY * 12)) * 100)
 
 		if (percentage > 125) {
 			setOver100yoMessage("(Looks like you're not human, dude!)")
@@ -34,7 +40,7 @@ const TimeIHaveLeft = () => {
 	}
 
 	const calculatePercentage = (monthsLeft: number): string => {
-		let percentage: number = ((1 - monthsLeft / (80 * 12)) * 100)
+		let percentage: number = ((1 - monthsLeft / (ASSUMED_LIFE_EXPECTANCY * 12)) * 100)
 		percentage = Math.max(0, percentage)
 		return percentage.toFixed(1);
 	};
@@ -52,27 +58,44 @@ const TimeIHaveLeft = () => {
 	};
 
 	const calculateTimeLeft = () => {
-		const deathDate = new Date(dob);
-		deathDate.setFullYear(dob.getFullYear() + 80);
-
-		// Calculate the difference in milliseconds
-		const differenceMs = deathDate.getTime() - currentDate.getTime();
-
 		// Calculate years, months, and days left
-		const yearsLeft = 80 - (currentDate.getFullYear() - dob.getFullYear());
+		const yearsLeft = ASSUMED_LIFE_EXPECTANCY - (currentDate.getFullYear() - dob.getFullYear());
+		
+		const deathDate = new Date(dob);
+		deathDate.setFullYear(dob.getFullYear() + ASSUMED_LIFE_EXPECTANCY);
 		const monthsLeft = calculateTotalMonths(deathDate, currentDate);
+
+		const differenceMs = deathDate.getTime() - currentDate.getTime(); // Calculate the difference in milliseconds
 		const daysLeft = Math.floor(differenceMs / (1000 * 60 * 60 * 24));
 
+		// Calculate % used
 		const tempPercentage = calculatePercentage(monthsLeft);
 		setPercentage(tempPercentage + '%');
-		changeOver100Message(monthsLeft)
+		
+		// Adjust the progress bar's width to reflect % used
 		const progressBar = document.getElementById('life-progress')!;
-		progressBar.style.width = `${tempPercentage}%`;
+		progressBar.style.width = `${tempPercentage}%`; 
+		
+		changeOver100Message(monthsLeft)
 		setTimeLeft({ years: yearsLeft, months: monthsLeft, days: daysLeft });
 	};
 
+	const calculateTimeLeftMinus10Years = () => {
+		const yearsLeft = (ASSUMED_LIFE_EXPECTANCY-10) - (currentDate.getFullYear() - dob.getFullYear());
+
+		const deathDate = new Date(dob);
+		deathDate.setFullYear(dob.getFullYear() + (ASSUMED_LIFE_EXPECTANCY-10));
+		const monthsLeft = calculateTotalMonths(deathDate, currentDate);
+
+		const differenceMs = deathDate.getTime() - currentDate.getTime();
+		const daysLeft = Math.floor(differenceMs / (1000 * 60 * 60 * 24));
+
+		setTimeLeftMinus10Years({ years: yearsLeft, months: monthsLeft, days: daysLeft });
+	}
+
 	useEffect(() => {
 		calculateTimeLeft();
+		calculateTimeLeftMinus10Years();
 		// eslint-disable-next-line
 	}, [dob]);
 
@@ -97,8 +120,16 @@ const TimeIHaveLeft = () => {
 					social revolutions, artificial intelligent impact, cancers, epidemics, then...
 				</p>
 				<p>
-					the amount of time you have left is: <b>~{timeLeft.years} years</b> OR{' '}
-					<b>~{timeLeft.months} months</b> OR <b>~{timeLeft.days} days</b> {over100yoMessage}
+					the amount of time you have left is: <br/>
+					<b>~{timeLeft.years} years</b> OR <br/>
+					<b>~{timeLeft.months} months</b> OR <br/>
+					<b>~{timeLeft.days} days </b> {over100yoMessage}
+				</p>
+				<p>
+					Oh maybe minus the last 10 useless weak-ass years of your life as well, now you have <br/>
+					<b>~{timeLeftMinus10Years.years} years</b> OR <br/>
+					<b>~{timeLeftMinus10Years.months} months</b> OR <br/>
+					<b>~{timeLeftMinus10Years.days} days left.</b>
 				</p>
 				<p>
 					Through this new len of looking at life expectancy, I hope you now think about
@@ -123,13 +154,12 @@ const TimeIHaveLeft = () => {
 				</div>
 			</div>
 			
-
 			<h1>Resources you may need:</h1>
 			<ul>
 				<li>
 					{createHyperlink(
 						'https://youtu.be/gGLxPY3qDYY',
-						'Một cuộc đời đáng sống - HieuTV (vietnamese)'
+						'Một cuộc đời đáng sống (vietnamese) - Hieu Nguyen'
 					)}
 				</li>
 				<li>
@@ -138,6 +168,7 @@ const TimeIHaveLeft = () => {
 						'Life advice for your 20s, 30s, 40s, 60s - Koskas'
 					)}
 				</li>
+				<li>Eat healthy food and Exercise regularly, you may be able to delay aging 10 more years</li>
 				<li>Suggestion? Send it to rodonguyendd@gmail.com</li>
 			</ul>
 		</div>

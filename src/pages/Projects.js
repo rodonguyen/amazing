@@ -8,7 +8,7 @@ import timeihaveleftImage from '../media/project_timeihaveleft.png'
 
 import { useState } from 'react';
 import { Link } from "react-router-dom";
-import createHyperlink from './utils.js';
+import { createHyperlink } from '../components/utils.js';
 
 const project01Index = '1',
 	project02Index = '2',

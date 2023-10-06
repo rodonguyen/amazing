@@ -135,6 +135,9 @@ const TimeIHaveLeft = () => {
 					Through this new len of looking at life expectancy, I hope you now think about
 					your life a bit differently.{' '}
 				</p>
+				<p>
+					Can I make you feel worse? Try with your parent's DoB.
+				</p>
 			</>
 			
 

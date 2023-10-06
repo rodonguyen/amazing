@@ -1,4 +1,8 @@
+import { changeWindowTitle } from '../components/utils.js';
+
 const NotFound = () => {
+  changeWindowTitle("Not found...")
+
   return (
     <div className="container notfound">
       <h1>

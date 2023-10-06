@@ -6,11 +6,14 @@ export const createHyperlink = (link, content) => {
   );
 };
 
-export const changeWindowTitle = (title) => {
-  if (title === '/timeihaveleft') {
+export const changeWindowTitle = (path) => {
+  if (path === '/') {
+    document.title = "Amazing by Rodo";
+  }
+  else if (path === '/timeihaveleft') {
     document.title = "Time I Have Left";
   }
-  else if (title === '/') {
-    document.title = "Amazing by Rodo";
+  else {
+    document.title = path;
   }
 }

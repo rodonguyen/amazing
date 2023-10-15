@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {createHyperlink, changeWindowTitle} from '../components/utils';
+import { createHyperlink, changeWindowTitle } from '../components/utils';
 import lifebarAnnotationImage from "../media/TimeIHaveLeft_Lifebar_annotation.jpg";
 
 interface TimeLeft {
@@ -32,7 +32,7 @@ const TimeIHaveLeft = () => {
 		const percentage = ((1 - monthsLeft / (ASSUMED_LIFE_EXPECTANCY * 12)) * 100)
 
 		if (percentage > 125) {
-			setOver100yoMessage("(Looks like you're not human, dude!)")
+			setOver100yoMessage("ERROR... Looks like you're not human, dude!")
 		}
 		else {
 			setOver100yoMessage("")
@@ -60,7 +60,7 @@ const TimeIHaveLeft = () => {
 	const calculateTimeLeft = () => {
 		// Calculate years, months, and days left
 		const yearsLeft = ASSUMED_LIFE_EXPECTANCY - (currentDate.getFullYear() - dob.getFullYear());
-		
+
 		const deathDate = new Date(dob);
 		deathDate.setFullYear(dob.getFullYear() + ASSUMED_LIFE_EXPECTANCY);
 		const monthsLeft = calculateTotalMonths(deathDate, currentDate);
@@ -71,20 +71,20 @@ const TimeIHaveLeft = () => {
 		// Calculate % used
 		const tempPercentage = calculatePercentage(monthsLeft);
 		setPercentage(tempPercentage + '%');
-		
+
 		// Adjust the progress bar's width to reflect % used
 		const progressBar = document.getElementById('life-progress')!;
-		progressBar.style.width = `${tempPercentage}%`; 
-		
+		progressBar.style.width = `${tempPercentage}%`;
+
 		changeOver100Message(monthsLeft)
 		setTimeLeft({ years: yearsLeft, months: monthsLeft, days: daysLeft });
 	};
 
 	const calculateTimeLeftMinus10Years = () => {
-		const yearsLeft = (ASSUMED_LIFE_EXPECTANCY-10) - (currentDate.getFullYear() - dob.getFullYear());
+		const yearsLeft = (ASSUMED_LIFE_EXPECTANCY - 10) - (currentDate.getFullYear() - dob.getFullYear());
 
 		const deathDate = new Date(dob);
-		deathDate.setFullYear(dob.getFullYear() + (ASSUMED_LIFE_EXPECTANCY-10));
+		deathDate.setFullYear(dob.getFullYear() + (ASSUMED_LIFE_EXPECTANCY - 10));
 		const monthsLeft = calculateTotalMonths(deathDate, currentDate);
 
 		const differenceMs = deathDate.getTime() - currentDate.getTime();
@@ -120,17 +120,23 @@ const TimeIHaveLeft = () => {
 					social revolutions, artificial intelligent impact, cancers, epidemics, then...
 				</p>
 				<p>
-					the amount of time you have left is: <br/>
-					<b>~{timeLeft.years} years</b> OR <br/>
-					<b>~{timeLeft.months} months</b> OR <br/>
-					<b>~{timeLeft.days} days </b> {over100yoMessage}
+					the amount of time you have left is: <br />
+					{over100yoMessage === "" ? (
+						<>
+							<b>~{timeLeft.years} years</b> OR <br />
+							<b>~{timeLeft.months} months</b> OR <br />
+							<b>~{timeLeft.days} days </b>
+						</>
+					) : over100yoMessage}
 				</p>
+				{over100yoMessage === "" ? (
 				<p>
-					Oh maybe minus the last 10 useless weak-ass years of your life as well, now you have <br/>
-					<b>~{timeLeftMinus10Years.years} years</b> OR <br/>
-					<b>~{timeLeftMinus10Years.months} months</b> OR <br/>
+					Oh maybe minus the last 10 useless weak-ass years of your life as well, now you have <br />
+					<b>~{timeLeftMinus10Years.years} years</b> OR <br />
+					<b>~{timeLeftMinus10Years.months} months</b> OR <br />
 					<b>~{timeLeftMinus10Years.days} days left.</b>
 				</p>
+				) : <></>}
 				<p>
 					Through this new len of looking at life expectancy, I hope you now think about
 					your life a bit differently.{' '}
@@ -139,7 +145,7 @@ const TimeIHaveLeft = () => {
 					Can I make you feel worse? Try with your parent's DoB.
 				</p>
 			</>
-			
+
 
 			{/* Progress bar */}
 			<div className='lifebar-illustration-container'>
@@ -156,7 +162,7 @@ const TimeIHaveLeft = () => {
 					</div>
 				</div>
 			</div>
-			
+
 			<h1>Resources you may need:</h1>
 			<ul>
 				<li>

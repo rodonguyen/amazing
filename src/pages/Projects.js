@@ -4,16 +4,16 @@ import sentimentImage from '../media/project_sentiment.png';
 // import dvdsystemImage from "../media/project_dvd_management_system.png";
 import websiteImage from '../media/project_website.png';
 import coolerdateImage from '../media/project_coolerdate.jpeg';
-import timeihaveleftImage from '../media/project_timeihaveleft.png'
+import timeihaveleftImage from '../media/project_timeihaveleft.png';
 
 import { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { createHyperlink } from '../components/utils.js';
 
 const project01Index = '1',
 	project02Index = '2',
 	project03Index = '3',
-	project04Index = "4",
+	project04Index = '4',
 	project05Index = '5',
 	project06Index = '6';
 
@@ -32,9 +32,9 @@ const projectContents = {
 					<ul>
 						<li>
 							Led a team of 4 to design 4 separate Machine Learning models that can
-							identify spam timport { Link } from "react-router-dom";weets with <b>{'>'}95% accuracy</b> (LSTM, Transformer,
-							SVM and Naive Bayes), provided insights into each model’s strengths and
-							shortcomings.
+							identify spam timport {Link} from "react-router-dom";weets with{' '}
+							<b>{'>'}95% accuracy</b> (LSTM, Transformer, SVM and Naive Bayes),
+							provided insights into each model’s strengths and shortcomings.
 						</li>
 						<li>
 							Analysed each model’s strengths and shortcomings and evaluated the
@@ -116,22 +116,20 @@ const projectContents = {
 			</>
 		),
 	},
-  4: {
+	4: {
 		short: (
 			<p>
-				Tell you your age in percentage, which may shock you a bit. 
-        Helpful resources are provided in case you need it :) 
-        I hope through this new len, you will think about your life differently.
-        Written in <b>TypeScript</b>.
+				Tell you your age in percentage, which may shock you a bit. Helpful resources are
+				provided in case you need it :) I hope through this new len, you will think about
+				your life differently. Written in <b>TypeScript</b>.
 			</p>
 		),
 		long: (
-      <p>
-        / Tell you your age in percentage, which may shock you a bit. 
-        Helpful resources are provided in case you need it :) 
-        I hope through this new len, you will think about your life differently.
-        Written in <b>TypeScript</b>.
-      </p>
+			<p>
+				/ Tell you your age in percentage, which may shock you a bit. Helpful resources are
+				provided in case you need it :) I hope through this new len, you will think about
+				your life differently. Written in <b>TypeScript</b>.
+			</p>
 		),
 	},
 	5: {
@@ -159,17 +157,18 @@ const projectContents = {
 	6: {
 		short: (
 			<p>
-				A full-stack application built to make “Asking someone out for a date” simpler and
-				even more special. I applied MERN architecture, designed suitable database schemas,
-				implemented a multitude of API endpoints and written fully automated unit tests.
+				An app built for getting survey answers and allows customised content according to
+				pre-defined access codes. I applied MERN architecture, designed suitable database
+				schemas, implemented a multitude of API endpoints and written fully automated unit
+				tests.
 			</p>
 		),
 		long: (
 			<p>
 				<ul>
 					<li>
-						A unique full-stack app built to make “Asking someone out for a date”
-						simpler and even more special.
+						An app built for getting survey answers and allows customised content
+						according to pre-defined access codes.
 					</li>
 					<li>
 						Applied MERN architecture (MongoDB, ExpressJS, React, NodeJS), designed
@@ -178,10 +177,7 @@ const projectContents = {
 						broaden my experience in Full-stack development, System Design, and Database
 						Modeling.
 					</li>
-					<li>
-						Fully automated server testing process by using Chai framework due to high
-						level of complexity.
-					</li>
+					<li>Automated server testing with the Chai.</li>
 				</ul>
 			</p>
 		),
@@ -221,7 +217,7 @@ export default function Projects() {
 		1: projectContents['1'].short,
 		2: projectContents['2'].short,
 		3: projectContents['3'].short,
-    4: projectContents['4'].short,
+		4: projectContents['4'].short,
 		5: projectContents['5'].short,
 		6: projectContents['6'].short,
 	});
@@ -288,14 +284,19 @@ export default function Projects() {
 
 	return (
 		<>
-      {createProjectEntry(
+			{createProjectEntry(
 				'Time I Have Left',
 				project04Index,
 				'https://github.com/rodonguyen/amazing/blob/main/src/pages/TimeIHaveLeft.tsx',
 				timeihaveleftImage,
-        <><button className='project-button'><Link to="/timeihaveleft" className="project-button">
-                  Check it out!
-                </Link></button>  &ensp; {'New!'}</>
+				<>
+					<button className='project-button'>
+						<Link to='/timeihaveleft' className='project-button'>
+							Check it out!
+						</Link>
+					</button>{' '}
+					&ensp; {'New!'}
+				</>
 			)}
 
 			{createProjectEntry(
@@ -303,10 +304,13 @@ export default function Projects() {
 				project02Index,
 				'https://github.com/rodonguyen/BitTracker',
 				bittrackerImage,
-				<>{createHyperlink(
-					'https://www.linkedin.com/posts/rodonguyen_programming-datascience-dataanalytics-activity-6986635066823127040-TFcs?utm_source=share&utm_medium=member_desktop',
-					<button className='project-button'>Read in Blog</button>
-				)} &ensp; {'New!'}</>
+				<>
+					{createHyperlink(
+						'https://www.linkedin.com/posts/rodonguyen_programming-datascience-dataanalytics-activity-6986635066823127040-TFcs?utm_source=share&utm_medium=member_desktop',
+						<button className='project-button'>Read in Blog</button>
+					)}{' '}
+					&ensp; {'New!'}
+				</>
 			)}
 
 			{createProjectEntry(
@@ -321,11 +325,14 @@ export default function Projects() {
 				project05Index,
 				'https://github.com/rodonguyen/my_website',
 				websiteImage,
-				createHyperlink('https://rodonguyen.dev/', <button className='project-button'>View it now</button>)
+				createHyperlink(
+					'https://rodonguyen.dev/',
+					<button className='project-button'>View it now</button>
+				)
 			)}
 
 			{createProjectEntry(
-				'CoolerDate',
+				'CoolerSurvey',
 				project06Index,
 				'https://github.com/rodonguyen/CoolerDate',
 				coolerdateImage

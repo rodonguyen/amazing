@@ -1,16 +1,26 @@
 import { Link } from "react-router-dom";
 import { useRef } from "react";
+import { FaMoon, FaSun } from "react-icons/fa"
+import { useDarkMode } from "./utils.js"
 
+const ThemeIcon = () => {
+	const [darkThemeEnabled, changeTheme] = useDarkMode()
+	const handleThemeButton = () => {
+		changeTheme(!darkThemeEnabled)
+	}
 
+	return (
+		<span onClick={handleThemeButton} className="navigation-icon">
+			{darkThemeEnabled ? (
+				<FaMoon size="24" />
+			) : (
+				<FaSun size="24" />
+			)}
+		</span>
+	)
+}
 
-const NavBar = ({ themeMode, setThemeMode }) => {
-  const changeMode = () => {
-    const modes = {
-      0: "Light",
-      1: "Dark",
-    };
-    setThemeMode(modes[(Object.values(modes).indexOf(themeMode) + 1) % 2]);
-  };
+const NavBar = () => {
 
   const hamburgerMenuSvg = (
     <svg
@@ -45,6 +55,7 @@ const NavBar = ({ themeMode, setThemeMode }) => {
                   About author
               </a>
             </li>
+						<ThemeIcon />
             <ul className="navbar-items" ref={navbarItemsRef}>
               <li>
                 <Link to="/timeihaveleft" className="navbar-item">
@@ -52,9 +63,6 @@ const NavBar = ({ themeMode, setThemeMode }) => {
                 </Link>
               </li>
             </ul>
-            {/* <ClickAwayListener onClickAway={() => {
-              navbarItemsRef.current.classList.remove("display-vertical-nav-items");
-            }}> */}
             <button
               class="hamburger-menu navbar-item"
               onClick={() => {
@@ -63,19 +71,9 @@ const NavBar = ({ themeMode, setThemeMode }) => {
             >
               {hamburgerMenuSvg}
             </button>
-            {/* </ClickAwayListener> */}
           </nav>
         </div>
       </div>
-      <button
-        type="button"
-        className="theme-mode"
-        onClick={() => {
-          changeMode();
-        }}
-      >
-        {themeMode} Mode
-      </button>
     </>
   );
 };

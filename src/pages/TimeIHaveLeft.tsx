@@ -100,7 +100,7 @@ const TimeIHaveLeft = () => {
 	}, [dob]);
 
 	return (
-		<div className='container'>
+		<div className='container time-i-have-left'>
 			<h1>Time I Have Left</h1>
 			<label htmlFor='dob'>Your date of birth:</label>&ensp;
 			<input

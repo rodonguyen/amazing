@@ -121,14 +121,14 @@ const projectContents = {
 			<p>
 				Tell you your age in percentage, which may shock you a bit. Helpful resources are
 				provided in case you need it :) I hope through this new len, you will think about
-				your life differently. Written in <b>TypeScript</b>.
+				your life differently. <b>#TypeScript</b>.
 			</p>
 		),
 		long: (
 			<p>
-				/ Tell you your age in percentage, which may shock you a bit. Helpful resources are
+				- Tell you your age in percentage, which may shock you a bit. Helpful resources are
 				provided in case you need it :) I hope through this new len, you will think about
-				your life differently. Written in <b>TypeScript</b>.
+				your life differently. <b>#TypeScript</b>.
 			</p>
 		),
 	},

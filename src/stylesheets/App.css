@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* *************************************************** */
 /* *************************************************** */
 /*                   APP                               */
@@ -171,12 +175,37 @@ a:visited,
 /* ################################################### */
 /* ################################################### */
 
+
+@layer components {
+  .navigation-icon {
+    @apply inline-block ml-auto mr-2 p-2 rounded-lg
+    transition duration-300 ease-in-out 
+    text-black cursor-pointer hover:text-white
+    dark:hover:bg-primary-dark dark:text-custom-white;
+  }
+
+  nav a.navbar-item {
+    @apply no-underline px-2 py-1 mx-1 block rounded-lg
+    duration-300 ease-in-out 
+  hover:text-white text-black visited:text-black
+  dark:hover:bg-primary-dark dark:hover:text-custom-white dark:text-custom-white dark:visited:text-custom-white;
+  }
+
+  /* a.navbar-item {
+  text-decoration: none;
+  padding: 0.3rem 0.8rem;
+  display: block;
+  border-radius: 0.5rem;
+  transition: none;
+} */
+}
+
 .navbar-container nav {
   position: relative;
   display: flex;
   align-items: center;
   height: auto;
-  padding: 0.4rem 0rem;
+  padding: 0.2rem 0rem;
 }
 
 .navbar-container {
@@ -189,18 +218,15 @@ a:visited,
   background: var(--secondary);
 }
 
-
 .navbar-container ul,
 .navbar-container li {
   width: fit-content;
   display: flex;
-  margin-left: auto;
 }
 
 .navbar-container li.navbar-item-about-author {
   width: fit-content;
-  display: flex;
-  margin-left: 0px;
+  margin-left: 2rem;
   margin-right: auto;
 }
 
@@ -209,18 +235,6 @@ a:visited,
   margin-bottom: 0;
   margin-right: 0;
   padding-left: 0;
-}
-
-a.navbar-item {
-  text-decoration: none;
-  padding: 0.3rem 0.8rem;
-  display: block;
-  border-radius: 0.5rem;
-  transition: none; /* overwrite dark/light mode transition */
-}
-
-a.navbar-item:hover {
-  background: var(--primary);
 }
 
 a.navbar-item.brand {
@@ -242,8 +256,6 @@ div.navbar-container {
 }
 
 .navbar-container {
-  border-top: 4px solid #424242;
-  /* border-bottom: 1px solid #c6c6c6; */
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* x-offset y-offset blur color */
   padding-left: 15px;
   padding-right: 15px;
@@ -425,6 +437,7 @@ button.hamburger-menu {
 .project svg {
   width: 20px;
   height: 20px;
+  display: inline-block;
 }
 
 .project svg:hover path {
@@ -522,6 +535,11 @@ img.lifebar-annotation {
   color: var(--text-color-for-light-theme); /* Text color */
 }
 
+.time-i-have-left li {
+  list-style: disc;
+}
+
+
 /* ################################################### */
 /* ################################################### */
 /* ##                     BUTTON                    ## */
@@ -557,7 +575,7 @@ img.lifebar-annotation {
 :root {
   --background-light: #f3fbfc;
   --primary: #c53329;
-  --secondary: rgb(235, 115, 99);
+  --secondary: #eb7363;
   --accent: #e98463;
   
   --text-color-for-light-theme: #000000;

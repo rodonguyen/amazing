@@ -5,7 +5,6 @@ import NotFound from "./NotFound.js";
 import "../stylesheets/App.css";
 
 import { Outlet, BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
 
 function App() {
   const AppConstantElements = (

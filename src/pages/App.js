@@ -8,23 +8,9 @@ import { Outlet, BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function App() {
-  // Utilise cache/local storage to store themeMode, keep it consistent throughout the session
-  let themeModeFromLS = localStorage.getItem("themeMode"); 
-  const [themeMode, setThemeMode] = useState(themeModeFromLS || 'Light');
-
-  useEffect(() => {
-    if (themeMode === "Dark") {
-      document.body.classList.add("dark");
-      localStorage.setItem('themeMode', 'Dark')
-    } else if (themeMode === "Light") {
-      document.body.classList.remove("dark");
-      localStorage.setItem('themeMode', 'Light')
-    }
-  }, [themeMode]);
-
   const AppConstantElements = (
     <div className="App">
-      <NavBar themeMode={themeMode} setThemeMode={setThemeMode} />
+      <NavBar />
       <Outlet />
     </div>
   );

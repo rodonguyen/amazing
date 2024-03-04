@@ -291,7 +291,7 @@ export default function Projects() {
 				timeihaveleftImage,
 				<>
 					<button className='project-button'>
-						<Link to='/timeihaveleft' className='project-button'>
+						<Link to='/time-i-have-left' className='project-button'>
 							Check it out!
 						</Link>
 					</button>{' '}

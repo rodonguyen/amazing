@@ -32,9 +32,15 @@ export const useDarkMode = () => {
 export const changeWindowTitle = (path) => {
   if (path === '/') {
     document.title = "Amazing by Rodo";
-  }
-  else if (path === '/timeihaveleft') {
+		return;
+	}
+	
+	path.replace(/\/\?.*$/, '')
+	if (path === '/time-i-have-left') {
     document.title = "Time I Have Left";
+  }
+	else if (path === '/happy-birthday-homie') {
+    document.title = "HPBD Homie! 🎉🎉🎉";
   }
   else {
     document.title = path;

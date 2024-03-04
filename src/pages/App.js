@@ -1,6 +1,7 @@
 import Home from "./Home.js";
 import NavBar from "../components/NavBar.js";
 import TimeIHaveLeft from "./TimeIHaveLeft.tsx";
+import HappyBirthdayHomie from "./HappyBirthdayHomie.tsx";
 import NotFound from "./NotFound.js";
 import "../stylesheets/App.css";
 
@@ -19,7 +20,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={AppConstantElements}>
-            <Route path="timeihaveleft" element={<TimeIHaveLeft/>} />
+            <Route path="time-i-have-left" element={<TimeIHaveLeft/>} />
+            <Route path="happy-birthday-homie" element={<HappyBirthdayHomie/>} />
             <Route path="/" exact element={<Home />} />
             <Route path="*" element={<NotFound />} />
           </Route>

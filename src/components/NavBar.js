@@ -24,7 +24,7 @@ const NavBar = () => {
 
   const hamburgerMenuSvg = (
     <svg
-      class="hamburger-menu"
+      className="hamburger-menu"
       width="30px"
       height="30px"
       viewBox="0 0 48 48"
@@ -55,16 +55,21 @@ const NavBar = () => {
                   About author
               </a>
             </li>
-						<ThemeIcon />
+						<ThemeIcon />  {/* Dark Theme Toggle Button */}
             <ul className="navbar-items" ref={navbarItemsRef}>
               <li>
-                <Link to="/timeihaveleft" className="navbar-item">
+                <Link to="/time-i-have-left" className="navbar-item">
                   Time I Have Left
                 </Link>
               </li>
+              <li>
+                <Link to="/happy-birthday-homie?c=rodo8888" className="navbar-item">
+                  Happy Birthday Homie
+                </Link>
+              </li>              
             </ul>
             <button
-              class="hamburger-menu"
+              className="hamburger-menu"
               onClick={() => {
                 navbarItemsRef.current.classList.toggle("display-vertical-nav-items");
               }}

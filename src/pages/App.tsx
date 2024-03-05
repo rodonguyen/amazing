@@ -1,7 +1,8 @@
+import React from "react";
 import Home from "./Home.js";
 import NavBar from "../components/NavBar.js";
-import TimeIHaveLeft from "./TimeIHaveLeft.tsx";
-import HappyBirthdayHomie from "./HappyBirthdayHomie.tsx";
+import TimeIHaveLeft from "./TimeIHaveLeft";
+import HappyBirthdayHomie from "./HappyBirthdayHomie";
 import NotFound from "./NotFound.js";
 import "../stylesheets/App.css";
 
@@ -25,7 +26,7 @@ function App() {
               path="happy-birthday-homie/:code"
               element={<HappyBirthdayHomie />}
             />
-            <Route path="/" exact element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

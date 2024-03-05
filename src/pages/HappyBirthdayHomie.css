@@ -1,0 +1,5 @@
+.happy-birthday-homie .grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 400px)); /* Adjust grid column width */
+  gap: 20px; /* Adjust gap between grid items */
+}

@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 
 export const createHyperlink = (link, content) => {
@@ -10,10 +11,8 @@ export const createHyperlink = (link, content) => {
 
 export const useDarkMode = () => {
   // Utilise cache/local storage to store themeMode, keep it consistent throughout the session
-  let darkThemeEnabledOnStorage = localStorage.getItem("darkThemeEnabled");
-  darkThemeEnabledOnStorage = darkThemeEnabledOnStorage
-    ? JSON.parse(darkThemeEnabledOnStorage)
-    : false;
+  let darkThemeEnabledOnStorage =
+    localStorage.getItem("darkThemeEnabled") === "true" ? true : false;
   const [darkThemeEnabled, changeTheme] = useState(darkThemeEnabledOnStorage);
 
   useEffect(() => {
@@ -34,11 +33,9 @@ export const changeWindowTitle = (path) => {
     document.title = "Amazing by Rodo";
     return;
   }
-
-  path.replace(/\/\?.*$/, "");
-  if (path === "/time-i-have-left") {
+  if (path.includes("/time-i-have-left")) {
     document.title = "Time I Have Left";
-  } else if (path === "/happy-birthday-homie") {
+  } else if (path.includes("/happy-birthday-homie")) {
     document.title = "HPBD Homie! 🎉🎉🎉";
   } else {
     document.title = path;

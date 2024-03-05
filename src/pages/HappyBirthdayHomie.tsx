@@ -13,11 +13,13 @@ const HappyBirthdayHomie = () => {
     fetchTodayBirthdays(code).then((data) => setBirthdays(data));
   }, [code]);
 
-  return <div className="container happy-birthday-homie">
-    {birthdays.map((birthday) => (
-      <BirthdayCard {...birthday} />
-    ))}
-  </div>;
+  return (
+    <div className="container happy-birthday-homie">
+      {birthdays.map((birthday) => (
+        <BirthdayCard {...birthday} />
+      ))}
+    </div>
+  );
 };
 
 export default HappyBirthdayHomie;

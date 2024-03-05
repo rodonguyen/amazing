@@ -1,4 +1,4 @@
-import { changeWindowTitle } from "../components/utils.js";
+import { changeWindowTitle } from "../components/utils";
 
 const NotFound = () => {
   changeWindowTitle("Not found...");

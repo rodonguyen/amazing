@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
-import { useDarkMode } from "./utils.js";
+import { useDarkMode } from "./utils";
 
 const ThemeIcon = () => {
   const [darkThemeEnabled, changeTheme] = useDarkMode();

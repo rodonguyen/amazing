@@ -22,7 +22,7 @@ function App() {
           <Route path="/" element={AppConstantElements}>
             <Route path="time-i-have-left" element={<TimeIHaveLeft />} />
             <Route
-              path="happy-birthday-homie"
+              path="happy-birthday-homie/:code"
               element={<HappyBirthdayHomie />}
             />
             <Route path="/" exact element={<Home />} />

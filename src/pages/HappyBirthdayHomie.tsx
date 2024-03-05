@@ -1,36 +1,23 @@
 import React, { useState, useEffect } from "react";
-import { createHyperlink, changeWindowTitle } from "../components/utils";
-
-type Birthday = {
-  name: string;
-  message: string;
-};
-
-const HAPPY_BIRTHDAY_API = "http://localhost:3333/birthdays";
-const HappyBirthdayCard = (birthday: Birthday) => {
-  return (
-    <div className="happy-birthday-card">
-      <h1>Have a Fking Lit Birthday, {birthday.name}! </h1>
-      <p>{birthday.message}</p>
-    </div>
-  );
-};
+import { changeWindowTitle } from "../components/utils";
+import { Birthday, fetchTodayBirthdays } from "../components/api";
+import { BirthdayCard } from "../components/BirthdayCard";
+import { useParams } from "react-router-dom";
 
 const HappyBirthdayHomie = () => {
   changeWindowTitle(window.location.pathname);
-
-  let query = window.location.search;
-  query = query.replace("?c=", ""); // get the query value of "c"
-
-  const [birthday, setBirthday] = useState<Array<Birthday>>([]);
+  const { code } = useParams();
+  const [birthdays, setBirthdays] = useState<Array<Birthday>>([]);
 
   useEffect(() => {
-    fetch(`${HAPPY_BIRTHDAY_API}/${query}`)
-      .then((response) => response.json())
-      .then((data) => setBirthday(data));
-  }, [query]);
+    fetchTodayBirthdays(code).then((data) => setBirthdays(data));
+  }, [code]);
 
-  return <div className="container happy-birthday-homie"></div>;
+  return <div className="container happy-birthday-homie">
+    {birthdays.map((birthday) => (
+      <BirthdayCard {...birthday} />
+    ))}
+  </div>;
 };
 
 export default HappyBirthdayHomie;

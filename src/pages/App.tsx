@@ -1,6 +1,8 @@
+import React from "react";
 import Home from "./Home.js";
 import NavBar from "../components/NavBar.js";
-import TimeIHaveLeft from "./TimeIHaveLeft.tsx";
+import TimeIHaveLeft from "./TimeIHaveLeft";
+import HappyBirthdayHomie from "./HappyBirthdayHomie";
 import NotFound from "./NotFound.js";
 import "../stylesheets/App.css";
 
@@ -19,8 +21,16 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={AppConstantElements}>
-            <Route path="timeihaveleft" element={<TimeIHaveLeft/>} />
-            <Route path="/" exact element={<Home />} />
+            <Route path="time-i-have-left" element={<TimeIHaveLeft />} />
+            <Route
+              path="happy-birthday-homie/:code"
+              element={<HappyBirthdayHomie />}
+            />
+            <Route
+              path="happy-birthday-homie"
+              element={<HappyBirthdayHomie />}
+            />
+            <Route path="/" element={<Home />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

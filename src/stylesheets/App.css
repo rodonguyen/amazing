@@ -113,7 +113,7 @@ button {
 }
 @media (max-width: 500px) {
   .container {
-    padding-left: 2rem; 
+    padding-left: 2rem;
     padding-right: 2rem;
   }
 }
@@ -152,7 +152,7 @@ button {
 }
 
 .dark .fade {
-  color: var(--black-blue)
+  color: var(--black-blue);
 }
 
 .App,
@@ -165,18 +165,16 @@ a:visited,
 .dark .App,
 .dark .navbar-container,
 .navbar-container {
-  transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+  transition:
+    background 500ms ease-in-out,
+    color 1000ms ease-in-out;
 }
-
-
-
 
 /* ################################################### */
 /* ################################################### */
 /* ##                   NAV BAR                     ## */
 /* ################################################### */
 /* ################################################### */
-
 
 @layer components {
   .navigation-icon {
@@ -196,15 +194,13 @@ a:visited,
     background-color: transparent;
   }
 
-  button.hamburger-menu path
-  {
+  button.hamburger-menu path {
     transition-duration: 300ms;
     transition-timing-function: ease-in-out;
     fill: black;
   }
 
-  button.hamburger-menu:hover path
-  {
+  button.hamburger-menu:hover path {
     transition-duration: 300ms;
     transition-timing-function: ease-in-out;
     fill: white;
@@ -283,9 +279,7 @@ button.hamburger-menu {
   display: none;
 }
 
-
 @media (max-width: 700px) {
-
   ul.navbar-items {
     display: none;
   }
@@ -296,14 +290,13 @@ button.hamburger-menu {
     border-radius: 0.5rem;
   }
 
-
   /* when click the hamburger-menu button */
   ul.navbar-items {
     /* The hide/show part */
     visibility: hidden;
     opacity: 0;
     /* Hide menu first */
-    display: none; 
+    display: none;
 
     /* Position */
     position: absolute;
@@ -322,9 +315,9 @@ button.hamburger-menu {
     opacity: 1;
     display: inline-block;
   }
-  
+
   .dark ul.navbar-items.display-vertical-nav-items {
-    background-color: rgb(235, 115, 99, 0.7); 
+    background-color: rgb(235, 115, 99, 0.7);
   }
 }
 
@@ -379,7 +372,7 @@ button.hamburger-menu {
     grid-column: span 12;
     text-align: center;
   }
-  
+
   .portrait {
     grid-column: span 12;
   }
@@ -403,7 +396,6 @@ button.hamburger-menu {
   }
 }
 
-
 /* ################################################### */
 /* ################################################### */
 /* ##                   PROJECTS                    ## */
@@ -414,7 +406,7 @@ button.hamburger-menu {
   margin-bottom: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgb(187, 187, 187);
-  min-height: 8.5rem;  /* +0.5rem from ".project img" */
+  min-height: 8.5rem; /* +0.5rem from ".project img" */
 }
 
 .project p {
@@ -488,7 +480,7 @@ button.hamburger-menu {
   fill: var(--red-vanilla);
 }
 
-.dark .project .description button.project-button{
+.dark .project .description button.project-button {
   color: var(--text-color-for-light-theme);
 }
 
@@ -538,7 +530,6 @@ img.lifebar-annotation {
   list-style: disc;
 }
 
-
 /* ################################################### */
 /* ################################################### */
 /* ##                     BUTTON                    ## */
@@ -557,11 +548,11 @@ img.lifebar-annotation {
 /* ################################################### */
 /* ################################################### */
 
-.notfound h1, .notfound p {
+.notfound h1,
+.notfound p {
   text-align: center;
   margin: 3rem auto;
 }
-
 
 /* ################################################### */
 /* ################################################### */
@@ -576,21 +567,21 @@ img.lifebar-annotation {
   --primary: #c53329;
   --secondary: #eb7363;
   --accent: #e98463;
-  
+
   --text-color-for-light-theme: #000000;
   --light-1: #e6ecf4;
   --light-2: #e2e2e6;
 
   --text-color-for-dark-theme: #e6e6e6;
-  --dark-1: #0B1119;
+  --dark-1: #0b1119;
   --dark-2: #070b10;
   --dark-3: #070707;
 
   /* Customised colors for other elements */
-  --red-vanilla: #E63946;
+  --red-vanilla: #e63946;
   --white-vanilla: #fefefe;
-  --light-blue: #A8DADC;
-  --pale-blue: #457B9D;
+  --light-blue: #a8dadc;
+  --pale-blue: #457b9d;
   --dark-blue: #0f5f9c;
   --light-pink: #d984d9;
 

@@ -1,30 +1,25 @@
 import { Link } from "react-router-dom";
 import { useRef } from "react";
-import { FaMoon, FaSun } from "react-icons/fa"
-import { useDarkMode } from "./utils.js"
+import { FaMoon, FaSun } from "react-icons/fa";
+import { useDarkMode } from "./utils";
 
 const ThemeIcon = () => {
-	const [darkThemeEnabled, changeTheme] = useDarkMode()
-	const handleThemeButton = () => {
-		changeTheme(!darkThemeEnabled)
-	}
+  const [darkThemeEnabled, changeTheme] = useDarkMode();
+  const handleThemeButton = () => {
+    changeTheme(!darkThemeEnabled);
+  };
 
-	return (
-		<span onClick={handleThemeButton} className="navigation-icon">
-			{darkThemeEnabled ? (
-				<FaMoon size="24" />
-			) : (
-				<FaSun size="24" />
-			)}
-		</span>
-	)
-}
+  return (
+    <span onClick={handleThemeButton} className="navigation-icon">
+      {darkThemeEnabled ? <FaMoon size="24" /> : <FaSun size="24" />}
+    </span>
+  );
+};
 
 const NavBar = () => {
-
   const hamburgerMenuSvg = (
     <svg
-      class="hamburger-menu"
+      className="hamburger-menu"
       width="30px"
       height="30px"
       viewBox="0 0 48 48"
@@ -47,26 +42,33 @@ const NavBar = () => {
             </Link>
             <li className="navbar-item-about-author">
               <a
-                  href="https://rodonguyen.dev/"
-                  className="navbar-item"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  About author
+                href="https://rodonguyen.dev/"
+                className="navbar-item"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                About author
               </a>
             </li>
-						<ThemeIcon />
+            <ThemeIcon /> {/* Dark Theme Toggle Button */}
             <ul className="navbar-items" ref={navbarItemsRef}>
               <li>
-                <Link to="/timeihaveleft" className="navbar-item">
+                <Link to="/time-i-have-left" className="navbar-item">
                   Time I Have Left
+                </Link>
+              </li>
+              <li>
+                <Link to="/happy-birthday-homie" className="navbar-item">
+                  Happy Birthday Homie
                 </Link>
               </li>
             </ul>
             <button
-              class="hamburger-menu"
+              className="hamburger-menu"
               onClick={() => {
-                navbarItemsRef.current.classList.toggle("display-vertical-nav-items");
+                navbarItemsRef.current.classList.toggle(
+                  "display-vertical-nav-items",
+                );
               }}
             >
               {hamburgerMenuSvg}
@@ -79,7 +81,6 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
 
 /*
 Source: 

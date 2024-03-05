@@ -20,8 +20,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={AppConstantElements}>
-            <Route path="time-i-have-left" element={<TimeIHaveLeft/>} />
-            <Route path="happy-birthday-homie" element={<HappyBirthdayHomie/>} />
+            <Route path="time-i-have-left" element={<TimeIHaveLeft />} />
+            <Route
+              path="happy-birthday-homie"
+              element={<HappyBirthdayHomie />}
+            />
             <Route path="/" exact element={<Home />} />
             <Route path="*" element={<NotFound />} />
           </Route>

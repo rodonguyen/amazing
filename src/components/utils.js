@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 export const createHyperlink = (link, content) => {
   return (
@@ -9,40 +9,38 @@ export const createHyperlink = (link, content) => {
 };
 
 export const useDarkMode = () => {
-	// Utilise cache/local storage to store themeMode, keep it consistent throughout the session
-	let darkThemeEnabledOnStorage = localStorage.getItem("darkThemeEnabled")
-	darkThemeEnabledOnStorage = darkThemeEnabledOnStorage
-		? JSON.parse(darkThemeEnabledOnStorage)
-		: false
-	const [darkThemeEnabled, changeTheme] = useState(darkThemeEnabledOnStorage)
+  // Utilise cache/local storage to store themeMode, keep it consistent throughout the session
+  let darkThemeEnabledOnStorage = localStorage.getItem("darkThemeEnabled");
+  darkThemeEnabledOnStorage = darkThemeEnabledOnStorage
+    ? JSON.parse(darkThemeEnabledOnStorage)
+    : false;
+  const [darkThemeEnabled, changeTheme] = useState(darkThemeEnabledOnStorage);
 
-	useEffect(() => {
-		if (darkThemeEnabled === true) {
-			document.body.classList.add("dark")
-			localStorage.setItem("darkThemeEnabled", "true")
-		} else if (darkThemeEnabled === false) {
-			document.body.classList.remove("dark")
-			localStorage.setItem("darkThemeEnabled", "false")
-		}
-	}, [darkThemeEnabled])
+  useEffect(() => {
+    if (darkThemeEnabled === true) {
+      document.body.classList.add("dark");
+      localStorage.setItem("darkThemeEnabled", "true");
+    } else if (darkThemeEnabled === false) {
+      document.body.classList.remove("dark");
+      localStorage.setItem("darkThemeEnabled", "false");
+    }
+  }, [darkThemeEnabled]);
 
-	return [darkThemeEnabled, changeTheme]
-}
+  return [darkThemeEnabled, changeTheme];
+};
 
 export const changeWindowTitle = (path) => {
-  if (path === '/') {
+  if (path === "/") {
     document.title = "Amazing by Rodo";
-		return;
-	}
-	
-	path.replace(/\/\?.*$/, '')
-	if (path === '/time-i-have-left') {
+    return;
+  }
+
+  path.replace(/\/\?.*$/, "");
+  if (path === "/time-i-have-left") {
     document.title = "Time I Have Left";
-  }
-	else if (path === '/happy-birthday-homie') {
+  } else if (path === "/happy-birthday-homie") {
     document.title = "HPBD Homie! 🎉🎉🎉";
-  }
-  else {
+  } else {
     document.title = path;
   }
-}
+};

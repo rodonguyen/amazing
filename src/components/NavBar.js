@@ -58,10 +58,7 @@ const NavBar = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/happy-birthday-homie/rodo8888"
-                  className="navbar-item"
-                >
+                <Link to="/happy-birthday-homie" className="navbar-item">
                   Happy Birthday Homie
                 </Link>
               </li>

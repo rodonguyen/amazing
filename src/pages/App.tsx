@@ -26,6 +26,10 @@ function App() {
               path="happy-birthday-homie/:code"
               element={<HappyBirthdayHomie />}
             />
+            <Route
+              path="happy-birthday-homie"
+              element={<HappyBirthdayHomie />}
+            />
             <Route path="/" element={<Home />} />
             <Route path="*" element={<NotFound />} />
           </Route>

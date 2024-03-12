@@ -323,7 +323,7 @@ button.hamburger-menu {
 
 .dark .navbar-container {
   background: var(--secondary);
-  box-shadow: 0px 5px 10px rgb(245, 199, 184, 0.2); /* x-offset y-offset blur color */
+  box-shadow: none; /* x-offset y-offset blur length color */
 }
 
 /* ################################################### */

@@ -24,16 +24,19 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 100px; /* Adjust width as needed */
+  width: 100px;
+  /* Adjust width as needed */
 }
 
 .tilted-columns-background::before {
-  left: -55px; /* Adjust spacing as needed */
+  left: -55px;
+  /* Adjust spacing as needed */
   transform: skewX(-10deg);
 }
 
 .tilted-columns-background::after {
-  right: -55px; /* Adjust spacing as needed */
+  right: -55px;
+  /* Adjust spacing as needed */
   transform: skewX(10deg);
 }
 
@@ -71,25 +74,23 @@
 
 
 /* BirthdayCard1 */
-.happy-birthday-card-1 {
-  .animate-character {
-    background-image: linear-gradient(-300deg,
-        #0016dd 0%,
-        #4d0599 20%,
-        #ff1361 30%,
-        #e5ff00 40%,
-        #e07f00 60%,
-        #01e4d8 80%,
-        #0016dd 100%);
-    background-size: auto auto;
-    background-clip: border-box;
-    background-size: 200% auto;
-    color: #fff;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: textclip 4s linear infinite;
-  }
+.happy-birthday-card-1 .animate-character {
+  background-image: linear-gradient(-300deg,
+      #0016dd 0%,
+      #4d0599 20%,
+      #ff1361 30%,
+      #e5ff00 40%,
+      #e07f00 60%,
+      #01e4d8 80%,
+      #0016dd 100%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 4s linear infinite;
 }
 
 @keyframes textclip {
@@ -100,38 +101,36 @@
 
 
 /* BirthdayCard2: SVG animate border */
-.happy-birthday-card-2 {
-  svg text {
-    font-family: Lora;
-    letter-spacing: 10px;
-    stroke: #ffa5d8;
-    font-size: 100px;
-    font-weight: 200;
-    stroke-width: 3;
-    animation: textAnimate 5s infinite alternate;
+.happy-birthday-card-2 svg text {
+  font-family: Lora;
+  letter-spacing: 10px;
+  stroke: #ffa5d8;
+  font-size: 100px;
+  font-weight: 200;
+  stroke-width: 3;
+  animation: textAnimate 5s infinite alternate;
+}
+
+.happy-birthday-card-2 h3.card-title {
+  letter-spacing: 10px;
+  stroke: #ffa5d8;
+  font-size: 50px;
+  stroke-width: 3;
+  /* animation: textAnimate 5s infinite alternate; */
+}
+
+
+@keyframes textAnimate {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: 20%;
+    fill: hsl(189, 68%, 75%);
   }
 
-  h3.card-title {
-    letter-spacing: 10px;
-    stroke: #ffa5d8;
-    font-size: 50px;
-    stroke-width: 3;
-    /* animation: textAnimate 5s infinite alternate; */
-  }
-
-  
-  @keyframes textAnimate {
-    0% {
-      stroke-dasharray: 0 50%;
-      stroke-dashoffset: 20%;
-      fill: hsl(189, 68%, 75%);
-    }
-
-    100% {
-      stroke-dasharray: 50% 0;
-      stroke-dashoffstet: -20%;
-      fill: hsla(189, 68%, 75%, 0%)
-    }
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffstet: -20%;
+    fill: hsla(189, 68%, 75%, 0%)
   }
 }
 
@@ -142,23 +141,23 @@
   --color-tertiary: #f28b7d;
   --color-quaternary: #f07a6a;
   --color-quinary: #ee6352;
+}
 
-  .card-title {
-    text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
-      9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
-    font-family: bungee, sans-serif;
-    /* font-weight: 400; */
-    text-transform: uppercase;
-    /* font-size: calc(2rem + 5vw); */
-    /* text-align: center; */
-    margin: 0;
-    color: var(--color-primary);
-    /* //color: transparent;
-  //background-color: white;
-  //background-clip: text; */
-    animation: shadows 1s ease-in infinite, move 1s ease-in infinite;
-    /* letter-spacing: 0.4rem; */
-  }
+.happy-birthday-card-3 .card-title {
+  text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
+    9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
+  font-family: bungee, sans-serif;
+  /* font-weight: 400; */
+  text-transform: uppercase;
+  /* font-size: calc(2rem + 5vw); */
+  /* text-align: center; */
+  margin: 0;
+  color: var(--color-primary);
+  /* //color: transparent;
+//background-color: white;
+//background-clip: text; */
+  animation: shadows 1s ease-in infinite, move 1s ease-in infinite;
+  /* letter-spacing: 0.4rem; */
 }
 
 
@@ -229,6 +228,7 @@
     transform: translate(0px, 0px);
   }
 }
+
 /* 
 @keyframes shadows {
   0% {

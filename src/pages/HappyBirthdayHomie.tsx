@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { changeWindowTitle } from "../components/utils";
 import { Birthday, fetchTodayBirthdays } from "../components/api";
-import { BirthdayCard1, BirthdayCard3 } from "../components/BirthdayCard";
+import { BirthdayCard3 } from "../components/BirthdayCard";
 import { useParams } from "react-router-dom";
 import "./HappyBirthdayHomie.css";
 

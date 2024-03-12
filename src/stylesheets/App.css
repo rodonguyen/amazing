@@ -279,7 +279,7 @@ button.hamburger-menu {
   display: none;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   ul.navbar-items {
     display: none;
   }
@@ -468,8 +468,8 @@ button.hamburger-menu {
 
 @media (max-width: 500px) {
   .project .ppicture img {
-    height: 4rem;
-    width: 4rem;
+    height: 5rem;
+    width: 5rem;
   }
 }
 

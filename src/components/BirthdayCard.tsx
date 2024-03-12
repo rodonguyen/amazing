@@ -55,7 +55,7 @@ export const BirthdayCard3 = (birthday: Birthday) => {
 		<div className='card happy-birthday-card-3'>
 			<div className='card-content'>
 				<h3 className='card-title'>Have a Fking Lit Birthday, {birthday.name}!</h3>
-				<h3 className='card-description animate-character emoji'>{birthday.message}</h3>
+				<h3 className='card-description'>{birthday.message}</h3>
 			</div>
 		</div>
 	);

@@ -36,7 +36,7 @@
   box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.1);
   padding: 30px;
   min-width: 250px;
-  max-width: 500px;
+  max-width: 600px;
   min-height: 300px;
   display: flex;
   align-items: center;
@@ -51,13 +51,13 @@
 
 .card-title {
   margin: 0;
-  font-size: 30px;
+  font-size: 44px;
   font-weight: bold;
 }
 
 .card-description {
   margin: 5px 0 0 0;
-  font-size: 25px;
+  font-size: 35px;
 }
 
 
@@ -214,6 +214,9 @@
 
 
 @media (max-width: 800px) {
+  .happy-birthday-card-3 .card-title {
+    font-size: 32px;
+  }
   .happy-birthday-card-3 .card-description {
     font-size: 22px;
   }

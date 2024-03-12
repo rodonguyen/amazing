@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { changeWindowTitle } from "../components/utils";
 import { Birthday, fetchTodayBirthdays } from "../components/api";
-import { BirthdayCard } from "../components/BirthdayCard";
+import { BirthdayCard1, BirthdayCard3 } from "../components/BirthdayCard";
 import { useParams } from "react-router-dom";
 import "./HappyBirthdayHomie.css";
 
@@ -16,9 +16,11 @@ const HappyBirthdayHomie = () => {
 
   return (
     <div className="container happy-birthday-homie">
+      <div className="tilted-columns-background"></div>
+
       <div className="grid-container">
         {birthdays.map((birthday) => (
-          <BirthdayCard {...birthday} />
+          <BirthdayCard3 {...birthday} />
         ))}
       </div>
     </div>

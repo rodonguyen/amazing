@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
 import { createHyperlink, changeWindowTitle } from "../components/utils";
 import lifebarAnnotationImage from "../media/TimeIHaveLeft_Lifebar_annotation.jpg";
 
@@ -9,6 +10,8 @@ interface TimeLeft {
 }
 
 const TimeIHaveLeft = () => {
+	const { dateOfBirth } = useParams();
+
   changeWindowTitle(window.location.pathname);
 
   const [over100yoMessage, setOver100yoMessage] = useState("");
@@ -26,6 +29,12 @@ const TimeIHaveLeft = () => {
   });
   const currentDate = new Date();
   const ASSUMED_LIFE_EXPECTANCY = 80;
+
+  useEffect(() => {
+    if (dateOfBirth) {
+      setDob(new Date(dateOfBirth));
+    }
+  }, [dateOfBirth]);
 
   /** Add a fun message if current age is over 100 years old. */
   const changeOver100Message = (monthsLeft: number) => {
@@ -116,7 +125,7 @@ const TimeIHaveLeft = () => {
         name="dob"
         min="1900-01-01"
         max="2100-01-01"
-        defaultValue="2001-01-01"
+        defaultValue={dateOfBirth || "2001-01-01"}
         onChange={handleDobChange}
         required
       />

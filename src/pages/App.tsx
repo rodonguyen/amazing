@@ -21,6 +21,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={AppConstantElements}>
+            <Route path="time-i-have-left/:dateOfBirth" element={<TimeIHaveLeft />} />
             <Route path="time-i-have-left" element={<TimeIHaveLeft />} />
             <Route
               path="happy-birthday-homie/:code"

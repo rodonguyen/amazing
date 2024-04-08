@@ -19,7 +19,7 @@ const HappyBirthdayHomie = () => {
 			<div className='custom-emoji-background'></div>
 			<div className='grid-container'>
 				{birthdays.map((birthday) => (
-						<BirthdayCard3 {...birthday} />
+					<BirthdayCard3 {...birthday} />
 				))}
 			</div>
 		</div>

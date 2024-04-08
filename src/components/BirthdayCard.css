@@ -47,12 +47,14 @@
   box-shadow: -3px -3px 6px 4px rgba(200, 200, 200, 0.02);
 }
 
-.card-content {}
+.card-content {
+}
 
 .card-title {
   margin: 0;
   font-size: 44px;
   font-weight: bold;
+
 }
 
 .card-description {
@@ -132,6 +134,7 @@
 }
 
 .happy-birthday-card-3 .card-title {
+  text-align: center;
   text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
     9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
   font-family: bungee, sans-serif;

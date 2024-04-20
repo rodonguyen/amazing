@@ -60,3 +60,15 @@ export const BirthdayCard3 = (birthday: Birthday) => {
 		</div>
 	);
 };
+
+export const BirthdayCard4 = (birthday: Birthday) => {
+	return (
+		<div className='card happy-birthday-card-4'>
+			<div className='card-content'>
+				<h3 className='card-title'>Have a Fking Lit Birthday, {birthday.name}!</h3>
+				<h3 className='card-description'>{birthday.message}</h3>
+			</div>
+		</div>
+	);
+};
+

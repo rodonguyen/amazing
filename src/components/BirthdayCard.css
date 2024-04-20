@@ -125,6 +125,8 @@
 }
 
 
+/* 3333333333333333333333333333333 */
+
 .happy-birthday-card-3 {
   --color-primary: #ffec98;
   --color-secondary: #f3d085;
@@ -223,4 +225,26 @@
   .happy-birthday-card-3 .card-description {
     font-size: 22px;
   }
+}
+
+
+/* 4444444444444444444444444 */
+
+.happy-birthday-card-4 {
+  --color-primary: #ffec98;
+  --color-secondary: #f3d085;
+  --color-tertiary: #f8b551;
+  --color-quaternary: #e07510;
+  --color-quinary: #d35f00;
+}
+
+.happy-birthday-card-4 .card-title {
+  text-align: center;
+  text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
+    9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
+  font-family: bungee, sans-serif;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  /* font-weight: 400; */
+  /* letter-spacing: 0.4rem; */
 }

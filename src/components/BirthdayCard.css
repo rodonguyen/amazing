@@ -31,10 +31,10 @@
   margin: 2rem auto;
   border: none;
   z-index: 1;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.1);
-  padding: 30px;
+  background-image: linear-gradient(168deg, rgba(255, 255, 255, 0.05), rgba(189, 245, 255, 0.05), rgba(103, 219, 255, 0.05));
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);
+  padding: 25px;
   min-width: 250px;
   max-width: 600px;
   min-height: 300px;
@@ -43,12 +43,10 @@
 }
 
 .dark .card {
-  background-color: var(--dark-2);
-  box-shadow: -3px -3px 6px 4px rgba(200, 200, 200, 0.02);
+  background-image: linear-gradient(168deg, rgba(0, 0, 0, 0.05), rgba(37, 50, 52, 0.05), rgba(54, 113, 131, 0.05));
 }
 
-.card-content {
-}
+.card-content {}
 
 .card-title {
   margin: 0;
@@ -62,72 +60,7 @@
   font-size: 35px;
 }
 
-
-/* BirthdayCard1 */
-.happy-birthday-card-1 .animate-character {
-  background-image: linear-gradient(-300deg,
-      #0016dd 0%,
-      #4d0599 20%,
-      #ff1361 30%,
-      #e5ff00 40%,
-      #e07f00 60%,
-      #01e4d8 80%,
-      #0016dd 100%);
-  background-size: auto auto;
-  background-clip: border-box;
-  background-size: 200% auto;
-  color: #fff;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textclip 4s linear infinite;
-}
-
-@keyframes textclip {
-  to {
-    background-position: 200% center;
-  }
-}
-
-
-/* BirthdayCard2: SVG animate border */
-.happy-birthday-card-2 svg text {
-  font-family: Lora;
-  letter-spacing: 10px;
-  stroke: #ffa5d8;
-  font-size: 100px;
-  font-weight: 200;
-  stroke-width: 3;
-  animation: textAnimate 5s infinite alternate;
-}
-
-.happy-birthday-card-2 h3.card-title {
-  letter-spacing: 10px;
-  stroke: #ffa5d8;
-  font-size: 50px;
-  stroke-width: 3;
-  /* animation: textAnimate 5s infinite alternate; */
-}
-
-
-@keyframes textAnimate {
-  0% {
-    stroke-dasharray: 0 50%;
-    stroke-dashoffset: 20%;
-    fill: hsl(189, 68%, 75%);
-  }
-
-  100% {
-    stroke-dasharray: 50% 0;
-    stroke-dashoffstet: -20%;
-    fill: hsla(189, 68%, 75%, 0%)
-  }
-}
-
-
-/* 3333333333333333333333333333333 */
-
-.happy-birthday-card-3 {
+.happy-birthday-card {
   --color-primary: #ffec98;
   --color-secondary: #f3d085;
   --color-tertiary: #f8b551;
@@ -135,116 +68,10 @@
   --color-quinary: #d35f00;
 }
 
-.happy-birthday-card-3 .card-title {
+.happy-birthday-card .card-title {
+  font-family: 'Pacifico', cursive;
   text-align: center;
-  text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
-    9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
-  font-family: bungee, sans-serif;
-  text-transform: uppercase;
-  margin: 0;
-  color: var(--color-primary);
-  animation: shadows 1s ease-in infinite, move 1s ease-in infinite;
-  /* font-weight: 400; */
-  /* letter-spacing: 0.4rem; */
-}
-
-
-@keyframes shadows {
-  0% {
-    text-shadow: none;
-  }
-
-  10% {
-    text-shadow: 0.7px 0.7px 0 var(--color-secondary);
-  }
-
-  20% {
-    text-shadow: 0.7px 0.7px 0 var(--color-secondary),
-      1.4px 1.4px 0 var(--color-tertiary);
-  }
-
-  30% {
-    text-shadow: 0.7px 0.7px 0 var(--color-secondary),
-      1.4px 1.4px 0 var(--color-tertiary), 2.1px 2.1px var(--color-quaternary);
-  }
-
-  35% {
-    text-shadow: 0.7px 0.7px 0 var(--color-secondary),
-      1.4px 1.4px 0 var(--color-tertiary), 2.1px 2.1px var(--color-quaternary),
-      2.8px 2.8px 0 var(--color-quinary);
-  }
-
-  65% {
-    text-shadow: 0.7px 0.7px 0 var(--color-secondary),
-      1.4px 1.4px 0 var(--color-tertiary), 2.1px 2.1px var(--color-quaternary),
-      2.8px 2.8px 0 var(--color-quinary);
-  }
-
-  70% {
-    text-shadow: 0.7px 0.7px 0 var(--color-secondary),
-      1.4px 1.4px 0 var(--color-tertiary), 2.1px 2.1px var(--color-quaternary);
-  }
-
-  80% {
-    text-shadow: 0.7px 0.7px 0 var(--color-secondary),
-      1.4px 1.4px 0 var(--color-tertiary);
-  }
-
-  90% {
-    text-shadow: 0.7px 0.7px 0 var(--color-secondary);
-  }
-
-  100% {
-    text-shadow: none;
-  }
-}
-
-@keyframes move {
-  0% {
-    transform: translate(0px, 0px);
-  }
-
-  35% {
-    transform: translate(-2.1px, -2.1px);
-  }
-
-  65% {
-    transform: translate(-2.1px, -2.1px);
-  }
-
-  100% {
-    transform: translate(0px, 0px);
-  }
-}
-
-
-@media (max-width: 800px) {
-  .happy-birthday-card-3 .card-title {
-    font-size: 32px;
-  }
-  .happy-birthday-card-3 .card-description {
-    font-size: 22px;
-  }
-}
-
-
-/* 4444444444444444444444444 */
-
-.happy-birthday-card-4 {
-  --color-primary: #ffec98;
-  --color-secondary: #f3d085;
-  --color-tertiary: #f8b551;
-  --color-quaternary: #e07510;
-  --color-quinary: #d35f00;
-}
-
-.happy-birthday-card-4 .card-title {
-  text-align: center;
-  text-shadow: 3px 3px 0 var(--color-secondary), 6px 6px 0 var(--color-tertiary),
-    9px 9px var(--color-quaternary), 12px 12px 0 var(--color-quinary);
-  font-family: bungee, sans-serif;
-  text-transform: uppercase;
-  color: var(--color-primary);
-  /* font-weight: 400; */
-  /* letter-spacing: 0.4rem; */
+  color: var(--secondary);
+  font-style: normal;
+  font-weight: 500;
 }

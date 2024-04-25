@@ -3,6 +3,7 @@ import './BirthdayCard.css';
 import { Birthday } from './api';
 
 export const BirthdayCard = (birthday: Birthday) => {
+	// When changing DB table, use this:
 	// if (!birthday.cardTitle || birthday.cardTitle === '') {
 	// 	birthday.cardTitle = 'Have an awesome birthday, ' + birthday.name + '! 🎉';
 	// }

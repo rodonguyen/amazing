@@ -3,29 +3,6 @@
 @tailwind utilities;
 
 
-.tilted-columns-background::before,
-.tilted-columns-background::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100px;
-  /* Adjust width as needed */
-}
-
-.tilted-columns-background::before {
-  left: -55px;
-  /* Adjust spacing as needed */
-  transform: skewX(-10deg);
-}
-
-.tilted-columns-background::after {
-  right: -55px;
-  /* Adjust spacing as needed */
-  transform: skewX(10deg);
-}
-
-
 .card {
   display: flex;
   margin: 2rem auto;

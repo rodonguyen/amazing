@@ -2,6 +2,23 @@ import React from 'react';
 import './BirthdayCard.css';
 import { Birthday } from './api';
 
+export const BirthdayCard = (birthday: Birthday) => {
+	// if (!birthday.cardTitle || birthday.cardTitle === '') {
+	// 	birthday.cardTitle = 'Have an awesome birthday, ' + birthday.name + '! 🎉';
+	// }
+
+
+	return (
+		<div className='card happy-birthday-card'>
+			<div className='card-content'>
+				<h3 className='card-title'>Have an awesome birthday, {birthday.name}! 🎉</h3>
+				<h3 className='card-message'>{birthday.message}</h3>
+			</div>
+		</div>
+	);
+};
+
+
 // export const BirthdayCard = (birthday: Birthday) => {
 // 	return (
 // 		<div className='card happy-birthday-card'>
@@ -60,15 +77,3 @@ import { Birthday } from './api';
 // 		</div>
 // 	);
 // };
-
-export const BirthdayCard = (birthday: Birthday) => {
-	return (
-		<div className='card happy-birthday-card'>
-			<div className='card-content'>
-				<h3 className='card-title'>Have an awesome birthday, {birthday.name}! 🎉</h3>
-				<h3 className='card-description'>{birthday.message}</h3>
-			</div>
-		</div>
-	);
-};
-

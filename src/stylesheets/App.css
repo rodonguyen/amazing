@@ -4,7 +4,7 @@
 
 /* *************************************************** */
 /* *************************************************** */
-/*                   APP                               */
+/*                         APP                         */
 /* *************************************************** */
 /* *************************************************** */
 
@@ -167,8 +167,8 @@ a:visited,
 .dark .navbar-container,
 .navbar-container {
   transition:
-    background 500ms ease-in-out,
-    color 1000ms ease-in-out;
+    background 300ms ease-in-out,
+    color 300ms ease-in-out;
 }
 
 /* ################################################### */
@@ -582,16 +582,9 @@ img.lifebar-annotation {
 
   /* Customised colors for other elements */
   --red-vanilla: #e63946;
-  --white-vanilla: #fefefe;
-  --light-blue: #a8dadc;
-  --pale-blue: #457b9d;
   --dark-blue: #0f5f9c;
   --light-pink: #d984d9;
 
-  --nav-link-padding: 0.5rem;
-  --nav-link-padding-side: 1rem;
-
-  --font-size-small: 14px;
   --font-size-normal: 18px;
   --font-size-large: 24px;
   --font-size-xlarge: 30px;

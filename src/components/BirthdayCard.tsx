@@ -3,17 +3,21 @@ import './BirthdayCard.css';
 import { Birthday } from './api';
 
 export const BirthdayCard = (birthday: Birthday) => {
-	// When changing DB table, use this:
-	// if (!birthday.cardTitle || birthday.cardTitle === '') {
-	// 	birthday.cardTitle = 'Have an awesome birthday, ' + birthday.name + '! 🎉';
-	// }
+	let cardTitle: string;	
+	
+	if (!birthday.cardTitle || birthday.cardTitle === '') {
+		const name = birthday.nickname || birthday.name;
+		cardTitle = 'Have an awesome birthday, ' + name + '! 🎉';
+	} else {
+		cardTitle = birthday.cardTitle;
+	}
 
 
 	return (
 		<div className='card happy-birthday-card'>
 			<div className='card-content'>
-				<h3 className='card-title'>Have an awesome birthday, {birthday.name}! 🎉</h3>
-				<h3 className='card-message'>{birthday.message}</h3>
+				<h3 className='card-title'>{cardTitle}</h3>
+				<h3 className='card-message'>{birthday.cardMessage}</h3>
 			</div>
 		</div>
 	);

@@ -1,10 +1,12 @@
 export type Birthday = {
   name: string;
-  message: string;
+  nickname?: string;
+  cardTitle?: string;
+  cardMessage?: string;
 };
 
-// const HAPPY_BIRTHDAY_API = "http://localhost:3000/birthdays";
-const HAPPY_BIRTHDAY_API = "https://homie-birthday-nest-api-rodonguyen-rodonguyens-projects.vercel.app/birthdays";
+// const HAPPY_BIRTHDAY_API = "http://localhost:3000/birthday";
+const HAPPY_BIRTHDAY_API = "https://homie-birthday-nest-api-rodonguyen-rodonguyens-projects.vercel.app/birthday";
 
 export const fetchTodayBirthdays = (
   code: string = "rodo8888",

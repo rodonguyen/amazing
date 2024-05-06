@@ -11,7 +11,10 @@ const HappyBirthdayHomie = () => {
 	const [birthdays, setBirthdays] = useState<Array<Birthday>>([]);
 
 	useEffect(() => {
-		fetchTodayBirthdays(code).then((data) => setBirthdays(data));
+		fetchTodayBirthdays(code).then((data) => {
+			if (!Array.isArray(data)) return;
+			setBirthdays(data as Array<Birthday>);
+		});
 	}, [code]);
 
 	return (

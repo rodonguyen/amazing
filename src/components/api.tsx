@@ -5,6 +5,7 @@ export type Birthday = {
   cardMessage?: string;
 };
 
+// const HAPPY_BIRTHDAY_API = process.env.REACT_APP_API_URL;
 // const HAPPY_BIRTHDAY_API = "http://localhost:3000/birthday";
 const HAPPY_BIRTHDAY_API = "https://homie-birthday-nest-api-rodonguyen-rodonguyens-projects.vercel.app/birthday";
 

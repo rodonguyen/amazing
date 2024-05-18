@@ -8,14 +8,13 @@
   margin: 2rem auto;
   border: none;
   z-index: 1;
-  background-image: linear-gradient(168deg, rgba(255, 255, 255, 0.05), rgba(189, 245, 255, 0.05), rgba(103, 219, 255, 0.05));
-  border-radius: 5px;
+  background-image: linear-gradient(168deg, rgba(1, 135, 231, 0.08), rgba(201, 247, 255, 0.02), rgba(103, 219, 255, 0.08));
+  border-radius: 8px;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);
   padding: 25px;
-  min-width: 250px;
+  min-width: 600px;
   max-width: 600px;
   min-height: 300px;
-  display: flex;
   align-items: center;
 }
 

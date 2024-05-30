@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { createHyperlink, changeWindowTitle } from "../components/utils";
 import lifebarAnnotationImage from "../media/TimeIHaveLeft_Lifebar_annotation.jpg";
+import "./TimeIHaveLeft.css";
 
 interface TimeLeft {
   years: number;
@@ -128,6 +129,7 @@ const TimeIHaveLeft = () => {
         defaultValue={dateOfBirth || "2001-01-01"}
         onChange={handleDobChange}
         required
+        className="dob-input"
       />
       <br></br>
       <>

@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 
 //www.realtimecolors.com/?colors=0f0f0f-ffffff-f37362-4ef9ac-f64d41&fonts=Poppins-Poppins
-https: module.exports = {
-  content: ["./src/**/*.{js,jsx}", "./public/index.html"],
+module.exports = {
+  content: ["./src/**/*.{js,jsx,tsx}", "./public/index.html"],
   darkMode: "class",
   theme: {
     extend: {
